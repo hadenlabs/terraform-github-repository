@@ -1,0 +1,63 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-github-repository
+
+# Tags of this project
+tags:
+  - github
+  - repository
+
+# Categories of this project
+categories:
+  - terraform-modules/github
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: 'Apache2'
+
+# Canonical GitHub repo
+github_repo: hadenlabs/terraform-github-repository
+
+# Badges to display
+badges:
+  - name: 'Build Status'
+    image: 'https://travis-ci.org/hadenlabs/terraform-github-repository.svg?branch=main'
+    url: 'https://travis-ci.org/hadenlabs/terraform-github-repository'
+  - name: 'Latest Release'
+    image: 'https://img.shields.io/github/release/hadenlabs/terraform-github-repository.svg'
+    url: 'https://travis-ci.org/hadenlabs/terraform-github-repository/releases'
+
+# Short description of this project
+description: |-
+  Terraform module to provision an github repository.
+
+# How to use this project
+usage: |-
+  ```hcl
+    module "main" {
+      source = "github.com/hadenlabs/terraform-github-repository"
+
+      name        = "repository-example"
+      description = "github repository for repository"
+      visibility  = "public"
+
+    }
+  ```
+
+  Full working example can be found in [example](./example) folder.
+
+include:
+  - 'docs/include/targets.md'
+  - 'docs/include/terraform.md'
+
+# Contributors to this project
+contributors:
+  - name: 'Luis Mayta'
+    github: 'luismayta'
