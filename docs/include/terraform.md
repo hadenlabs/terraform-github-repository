@@ -5,17 +5,14 @@ This document gives an overview of variables used in the platform of the terrafo
 
 | Name | Version |
 |------|---------|
-| terraform | >=0.13.0 |
-| github | >=2.9.2 |
-| local | >=1.3.0 |
-| null | >=0.1.0 |
-| template | >=1.0.0 |
+| terraform | >= 0.13 |
+| github | >=4.3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| github | >=2.9.2 |
+| github | >=4.3.0 |
 
 ## Inputs
 
