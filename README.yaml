@@ -16,6 +16,21 @@ tags:
 categories:
   - terraform-modules/github
 
+company:
+  name: hadenlabs
+  description: |-
+    company labs
+  url: https://hadenlabs.com
+  github: https://github.com/hadenlabs
+  email: support@hadenlbas.com
+
+copyright:
+  name: Hadenlabs
+  url: https://hadenlabs.com
+
+email:
+  support: support@hadenlabs.com
+
 # Logo for this project
 #logo: docs/logo.png
 
@@ -42,7 +57,12 @@ description: |-
 usage: |-
   ```hcl
     module "main" {
-      source = "github.com/hadenlabs/terraform-github-repository"
+      source = "hadenlabs/repository/github"
+      version = "0.1.0"
+
+      providers {
+        github = github
+      }
 
       name        = "repository-example"
       description = "github repository for repository"
