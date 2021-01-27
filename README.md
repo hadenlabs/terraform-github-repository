@@ -25,6 +25,7 @@ This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) mod
 ## Usage
 
 ```hcl
+
   module "main" {
     source = "hadenlabs/repository/github"
     version = "0.1.0"
@@ -38,6 +39,22 @@ This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) mod
     visibility  = "public"
 
   }
+
+  module "main_with_key" {
+    source = "hadenlabs/repository/github"
+    version = "0.1.0"
+
+    providers {
+      github = github
+    }
+
+    name        = "repository-example-with-key"
+    description = "github repository for repository"
+    visibility  = "public"
+    key = "/usr/etc/key/user.pub"
+    read_only = false
+  }
+
 ```
 
 Full working example can be found in [example](./example) folder.
