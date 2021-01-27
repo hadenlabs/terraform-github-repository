@@ -59,7 +59,7 @@ usage: |-
 
     module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.1.0"
+      version = "0.2.0"
 
       providers {
         github = github
@@ -73,7 +73,7 @@ usage: |-
 
     module "main_with_key" {
       source = "hadenlabs/repository/github"
-      version = "0.1.0"
+      version = "0.2.0"
 
       providers {
         github = github
