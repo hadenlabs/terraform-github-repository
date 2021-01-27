@@ -66,14 +66,17 @@ This document gives an overview of variables used in the platform of the terrafo
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | :-: |
 | description | The description of the repository. | `string` | n/a | yes |
+| key | filename pub for repository deploy key. | `string` | `""` | no |
 | name | The name of the repository. | `string` | n/a | yes |
+| read_only | enabled read_only or no. | `bool` | `true` | no |
 | visibility | The visibility of the repository private or public. | `string` | `"private"` | no |
 
 ## Outputs
 
-| Name     | Description                |
-| -------- | -------------------------- |
-| instance | output instance repository |
+| Name       | Description                |
+| ---------- | -------------------------- |
+| deploy_key | output instance deploy_key |
+| instance   | output instance repository |
 
 ## Help
 
