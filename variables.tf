@@ -13,3 +13,15 @@ variable "visibility" {
   description = "The visibility of the repository private or public."
   default     = "private"
 }
+
+variable "key" {
+  type        = string
+  description = "filename pub for repository deploy key."
+  default     = ""
+}
+
+variable "read_only" {
+  type        = bool
+  description = "enabled read_only or no."
+  default     = true
+}
