@@ -28,7 +28,7 @@ This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) mod
 
   module "main" {
     source = "hadenlabs/repository/github"
-    version = "0.1.0"
+    version = "0.2.0"
 
     providers {
       github = github
@@ -42,7 +42,7 @@ This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) mod
 
   module "main_with_key" {
     source = "hadenlabs/repository/github"
-    version = "0.1.0"
+    version = "0.2.0"
 
     providers {
       github = github
