@@ -10,7 +10,7 @@ resource "github_repository" "instance" {
 
 # Add a deploy key
 resource "github_repository_deploy_key" "instance" {
-  count      = var.key ? 1 : 0
+  count      = try(var.key, null) != null ? 1 : 0
   title      = var.name
   repository = github_repository.instance.name
   key        = file(var.key)

@@ -17,7 +17,7 @@ variable "visibility" {
 variable "key" {
   type        = string
   description = "filename pub for repository deploy key."
-  default     = ""
+  default     = null
 }
 
 variable "read_only" {
