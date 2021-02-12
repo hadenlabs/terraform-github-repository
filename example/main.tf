@@ -1,5 +1,5 @@
 module "main" {
-  providers {
+  providers = {
     github = github
   }
   source      = "git://github.com/hadenlabs/terraform-github-repository.git?ref=0.2.0"
@@ -9,7 +9,7 @@ module "main" {
 }
 
 module "main_with_key" {
-  providers {
+  providers = {
     github = github
   }
   source      = "git://github.com/hadenlabs/terraform-github-repository.git?ref=0.2.0"
