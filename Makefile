@@ -32,7 +32,7 @@ TEAM := hadenlabs
 REPOSITORY_DOMAIN:=github.com
 REPOSITORY_OWNER:=${TEAM}
 AWS_VAULT ?= ${TEAM}
-PROJECT=terraform-github-repository
+PROJECT:=terraform-github-repository
 PROJECT_PORT := 3000
 
 PYTHON_VERSION=3.8.0
