@@ -52,6 +52,14 @@ This project is part of our comprehensive [{{ printf (ds "config").company.name}
 
 {{ (ds "config").requirements -}} {{ end }}
 
+
+{{ if has (ds "config") "installation" }}
+## Installation
+{{ range $file := (datasource "config").installation -}}
+{{ (include "includes" $file) }}
+{{- end }}
+{{- end }}
+
 {{ if has (ds "config") "usage" }}
 
 ## Usage
@@ -70,7 +78,9 @@ This project is part of our comprehensive [{{ printf (ds "config").company.name}
 
 {{(ds "config").examples }} {{ end }}
 
-{{ if has (ds "config") "include" }} {{ range $file := (datasource "config").include -}} {{ (include "includes" $file) }} {{- end }} {{- end }} {{ if has (ds "config") "related" }}
+{{ if has (ds "config") "include" }} {{ range $file := (datasource "config").include -}} {{ (include "includes" $file) }} {{- end }} {{- end }}
+
+{{ if has (ds "config") "related" }}
 
 ## Related Projects
 
