@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.3.0"></a>
+
+## [0.3.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.2.0...0.3.0)
+
+> 2021-02-12
+
+### Bug Fixes
+
+- name path provision generators readme(0.3.0)
+- validation deploy if not is null ([#17](https://github.com/hadenlabs/terraform-github-repository/issues/17))
+
+### Code Refactoring
+
+- actions test and yarn for make ([#15](https://github.com/hadenlabs/terraform-github-repository/issues/15))
+- upgrade settings hooks for git prepare-commit-msg ([#15](https://github.com/hadenlabs/terraform-github-repository/issues/15))
+- move lints to path github ([#15](https://github.com/hadenlabs/terraform-github-repository/issues/15))
+
+### Performance Improvements
+
+- disabled hooks terraform docs ([#17](https://github.com/hadenlabs/terraform-github-repository/issues/17))
+- generator readme with go template ([#15](https://github.com/hadenlabs/terraform-github-repository/issues/15))
+
 <a name="0.2.0"></a>
 
 ## [0.2.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.1.0...0.2.0)
