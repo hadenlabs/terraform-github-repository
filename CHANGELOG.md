@@ -29,7 +29,7 @@ All notable changes to this project will be documented in this file. This file u
 
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.0.0...0.1.0)
+## 0.1.0
 
 > 2020-12-25
 
@@ -44,9 +44,3 @@ All notable changes to this project will be documented in this file. This file u
 ### Features
 
 - implement enabled features and hotfix ([#1](https://github.com/hadenlabs/terraform-github-repository/issues/1))
-
-<a name="0.0.0"></a>
-
-## 0.0.0
-
-> 2020-12-24
