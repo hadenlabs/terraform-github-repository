@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.4.0"></a>
+
+## [0.4.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.3.0...0.4.0)
+
+> 2021-02-16
+
+### Bug Fixes
+
+- name path provision generators readme(0.3.0)
+
+### Features
+
+- implement github issue label ([#20](https://github.com/hadenlabs/terraform-github-repository/issues/20))
+
 <a name="0.3.0"></a>
 
 ## [0.3.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.2.0...0.3.0)
