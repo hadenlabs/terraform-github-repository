@@ -27,7 +27,7 @@ This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) mod
 ```hcl
   module "main" {
     source = "hadenlabs/repository/github"
-    version = "0.3.0"
+    version = "0.4.0"
 
     providers = {
       github = github
@@ -41,7 +41,7 @@ This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) mod
 
   module "main_with_key" {
     source = "hadenlabs/repository/github"
-    version = "0.3.0"
+    version = "0.4.0"
 
     providers = {
       github = github
