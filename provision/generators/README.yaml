@@ -85,6 +85,23 @@ usage: |-
       read_only = false
     }
 
+    module "main_with_secrets" {
+      source = "hadenlabs/repository/github"
+      version = "0.4.0"
+
+      providers = {
+        github = github
+      }
+
+      name        = "repository-example-with-key"
+      description = "github repository for repository"
+      visibility  = "public"
+      secrets = {
+        key= value
+      }
+
+    }
+
   ```
 
   Full working example can be found in [example](./example) folder.
