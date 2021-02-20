@@ -54,6 +54,23 @@ This project is part of our comprehensive [hadenlabs](https://hadenlabs.com) mod
     read_only = false
   }
 
+  module "main_with_secrets" {
+    source = "hadenlabs/repository/github"
+    version = "0.4.0"
+
+    providers = {
+      github = github
+    }
+
+    name        = "repository-example-with-key"
+    description = "github repository for repository"
+    visibility  = "public"
+    secrets = {
+      key= value
+    }
+
+  }
+
 ```
 
 Full working example can be found in [example](./example) folder.
@@ -85,14 +102,16 @@ This document gives an overview of variables used in the platform of the terrafo
 | key | filename pub for repository deploy key. | `string` | `null` | no |
 | name | The name of the repository. | `string` | n/a | yes |
 | read_only | enabled read_only or no. | `bool` | `true` | no |
+| secrets | secrets for repository | `map(any)` | `null` | no |
 | visibility | The visibility of the repository private or public. | `string` | `"private"` | no |
 
 ## Outputs
 
-| Name       | Description                |
-| ---------- | -------------------------- |
-| deploy_key | output instance deploy_key |
-| instance   | output instance repository |
+| Name       | Description                            |
+| ---------- | -------------------------------------- |
+| deploy_key | output instance deploy_key             |
+| instance   | output instance repository             |
+| secrets    | output instance github actions secrets |
 
 ## Help
 
