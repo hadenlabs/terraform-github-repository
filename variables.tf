@@ -25,3 +25,10 @@ variable "read_only" {
   description = "enabled read_only or no."
   default     = true
 }
+
+variable "secrets" {
+  type        = map(any)
+  description = "secrets for repository"
+  sensitive   = true
+  default     = null
+}
