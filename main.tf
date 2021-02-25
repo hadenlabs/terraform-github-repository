@@ -1,10 +1,23 @@
 locals {
   settings = {
-    auto_init    = true
-    has_issues   = true
-    has_wiki     = true
-    has_projects = true
+    auto_init              = true
+    has_issues             = true
+    has_wiki               = true
+    has_projects           = true
+    homepage_url           = ""
+    is_template            = false
+    allow_merge_commit     = true
+    allow_squash_merge     = true
+    allow_rebase_merge     = true
+    delete_branch_on_merge = false
+    gitignore_template     = ""
+    license_template       = ""
+    archived               = false
+    archive_on_destroy     = false
+    topics                 = []
+    vulnerability_alerts   = true
   }
+  confs = merge(local.settings, var.settings)
 }
 
 resource "github_repository" "this" {
@@ -12,24 +25,22 @@ resource "github_repository" "this" {
   description = var.description
   visibility  = var.visibility
 
-  for_each = merge(local.settings, var.settings)
-
-  homepage_url           = each.value.homepage_url
-  has_issues             = each.value.has_issues
-  has_projects           = each.value.has_projects
-  has_wiki               = each.value.has_wiki
-  is_template            = each.value.is_template
-  allow_merge_commit     = each.value.allow_merge_commit
-  allow_squash_merge     = each.value.allow_squash_merge
-  allow_rebase_merge     = each.value.allow_rebase_merge
-  delete_branch_on_merge = each.value.delete_branch_on_merge
-  auto_init              = each.value.auto_init
-  gitignore_template     = each.value.gitignore_template
-  license_template       = each.value.license_template
-  archived               = each.value.archived
-  archive_on_destroy     = each.value.archive_on_destroy
-  topics                 = each.value.topics
-  vulnerability_alerts   = each.value.vulnerability_alerts
+  homepage_url           = local.confs.homepage_url
+  has_issues             = local.confs.has_issues
+  has_projects           = local.confs.has_projects
+  has_wiki               = local.confs.has_wiki
+  is_template            = local.confs.is_template
+  allow_merge_commit     = local.confs.allow_merge_commit
+  allow_squash_merge     = local.confs.allow_squash_merge
+  allow_rebase_merge     = local.confs.allow_rebase_merge
+  delete_branch_on_merge = local.confs.delete_branch_on_merge
+  auto_init              = local.confs.auto_init
+  gitignore_template     = local.confs.gitignore_template
+  license_template       = local.confs.license_template
+  archived               = local.confs.archived
+  archive_on_destroy     = local.confs.archive_on_destroy
+  topics                 = local.confs.topics
+  vulnerability_alerts   = local.confs.vulnerability_alerts
 
 
   dynamic "pages" {

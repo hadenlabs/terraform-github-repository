@@ -69,4 +69,5 @@ variable "settings" {
     vulnerability_alerts   = bool
     topics                 = list(string)
   }))
+  default = {}
 }
