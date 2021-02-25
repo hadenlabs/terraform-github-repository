@@ -88,25 +88,18 @@ resource "github_issue_label" "priority_low" {
   color       = "0e8a16"
 }
 
-resource "github_issue_label" "status_abandonned" {
+resource "github_issue_label" "status_backlog" {
   repository  = github_repository.this.name
-  name        = "status/abandoned"
-  description = "This issue or PR is no longer important."
-  color       = "000000"
+  name        = "status/backlog"
+  description = "Status Backlog."
+  color       = "fbca04"
 }
 
-resource "github_issue_label" "status_available" {
+resource "github_issue_label" "status_ready" {
   repository  = github_repository.this.name
-  name        = "status/available"
-  description = "No one has claimed responsibility for resolving this issue."
-  color       = "c2e0c6"
-}
-
-resource "github_issue_label" "status_blocked" {
-  repository  = github_repository.this.name
-  name        = "status/blocked"
-  description = "There is another issue or PR that needs to be resolved first."
-  color       = "ee0701"
+  name        = "status/todo"
+  description = "Status Ready (to do)."
+  color       = "fbca04"
 }
 
 resource "github_issue_label" "status_in_progress" {
@@ -116,53 +109,18 @@ resource "github_issue_label" "status_in_progress" {
   color       = "cccccc"
 }
 
-resource "github_issue_label" "status_on_hold" {
-  repository  = github_repository.this.name
-  name        = "status/on_hold"
-  description = "Similar to blocked, but is assigned to someone."
-  color       = "e99695"
-}
-
-resource "github_issue_label" "status_proposal" {
-  repository  = github_repository.this.name
-  name        = "status/proposal"
-  description = "A new propoal."
-  color       = "d4c5f9"
-}
-
-resource "github_issue_label" "status_review_needed" {
-  repository  = github_repository.this.name
-  name        = "status/review_needed"
-  description = "The issue or PR needs to be reviewed."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "status_backlog" {
-  repository  = github_repository.this.name
-  name        = "Backlog"
-  description = "Status Backlog."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "status_ready" {
-  repository  = github_repository.this.name
-  name        = "Ready"
-  description = "Status Ready."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "status_working" {
-  repository  = github_repository.this.name
-  name        = "Working"
-  description = "Status Working."
-  color       = "fbca04"
-}
-
 resource "github_issue_label" "status_review" {
   repository  = github_repository.this.name
-  name        = "Review"
+  name        = "status/review"
   description = "Status Review."
   color       = "fbca04"
+}
+
+resource "github_issue_label" "status_approved" {
+  repository  = github_repository.this.name
+  name        = "status/approved"
+  description = "status approved."
+  color       = "c2e0c6"
 }
 
 resource "github_issue_label" "status_done" {
@@ -170,4 +128,11 @@ resource "github_issue_label" "status_done" {
   name        = "Done"
   description = "Status Done."
   color       = "fbca04"
+}
+
+resource "github_issue_label" "status_blocked" {
+  repository  = github_repository.this.name
+  name        = "status/blocked"
+  description = "There is another issue or PR not is possible resolved."
+  color       = "ee0701"
 }
