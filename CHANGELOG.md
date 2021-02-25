@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.5.0"></a>
+
+## [0.5.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.4.0...0.5.0)
+
+> 2021-02-25
+
+### Bug Fixes
+
+- declaration var secret ([#22](https://github.com/hadenlabs/terraform-github-repository/issues/22))
+
+### Code Refactoring
+
+- settings deploy key for repository ([#29](https://github.com/hadenlabs/terraform-github-repository/issues/29))
+- implement settings repository ([#27](https://github.com/hadenlabs/terraform-github-repository/issues/27))
+- status of repository ([#24](https://github.com/hadenlabs/terraform-github-repository/issues/24))
+
+### Features
+
+- implement settings for repository resource ([#27](https://github.com/hadenlabs/terraform-github-repository/issues/27))
+- implement provider local ([#27](https://github.com/hadenlabs/terraform-github-repository/issues/27))
+- implement configuration pages ([#20](https://github.com/hadenlabs/terraform-github-repository/issues/20))
+- implement variable secrets ([#19](https://github.com/hadenlabs/terraform-github-repository/issues/19))
+- implement resource actions secret ([#19](https://github.com/hadenlabs/terraform-github-repository/issues/19))
+
+### Features
+
+- implement lifecycle for github repository ([#20](https://github.com/hadenlabs/terraform-github-repository/issues/20))
+
 <a name="0.4.0"></a>
 
 ## [0.4.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.3.0...0.4.0)
