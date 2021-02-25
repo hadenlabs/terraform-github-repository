@@ -1,1 +1,2 @@
 provider "github" {}
+provider "local" {}
