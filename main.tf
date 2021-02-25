@@ -3,13 +3,26 @@ resource "github_repository" "this" {
   description = var.description
   visibility  = var.visibility
 
+  auto_init    = true
   has_issues   = true
   has_wiki     = true
   has_projects = true
+
+  dynamic "pages" {
+    for_each = var.pages
+    content {
+      source {
+        branch = lookup(pages, "branch", var.default_branch)
+        path   = lookup(pages, "path", "/docs")
+      }
+      cname = lookup(pages, "cname")
+    }
+  }
 }
 
 # Add a deploy key
 resource "github_repository_deploy_key" "this" {
+  depends_on = [github_repository.this]
   count      = try(var.key, null) != null ? 1 : 0
   title      = var.name
   repository = github_repository.this.name
