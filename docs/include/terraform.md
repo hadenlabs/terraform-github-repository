@@ -10,6 +10,7 @@ This document gives an overview of variables used in the platform of the terrafo
 | --------- | ------- |
 | terraform | >= 0.13 |
 | github    | >=4.3.0 |
+| local     | >=1.3.0 |
 
 ## Providers
 
@@ -28,6 +29,7 @@ This document gives an overview of variables used in the platform of the terrafo
 | pages | Configuratin block for GitHub Pages | <pre>map(object({<br> branch = string<br> path = string<br> cname = string<br> }))</pre> | `{}` | no |
 | read_only | enabled read_only or no. | `bool` | `true` | no |
 | secrets | secrets for repository | `map(any)` | `{}` | no |
+| settings | Create and manage settings. | <pre>map(object({<br> homepage_url = string<br> has_issues = bool<br> has_projects = bool<br> has_wiki = bool<br> is_template = bool<br> allow_merge_commit = bool<br> allow_squash_merge = bool<br> allow_rebase_merge = bool<br> delete_branch_on_merge = bool<br> auto_init = bool<br> gitignore_template = string<br> license_template = string<br> archived = bool<br> archive_on_destroy = bool<br> vulnerability_alerts = bool<br> topics = list(string)<br> }))</pre> | `{}` | no |
 | visibility | The visibility of the repository private or public. | `string` | `"private"` | no |
 
 ## Outputs
