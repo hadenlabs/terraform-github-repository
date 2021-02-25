@@ -31,3 +31,19 @@ variable "secrets" {
   description = "secrets for repository"
   default     = {}
 }
+
+variable "pages" {
+  type = map(object({
+    branch = string
+    path   = string
+    cname  = string
+  }))
+  description = "Configuratin block for GitHub Pages"
+  default     = {}
+}
+
+variable "default_branch" {
+  type        = string
+  description = "Name of the Default Branch of the Repository"
+  default     = "develop"
+}
