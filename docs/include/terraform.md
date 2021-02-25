@@ -23,11 +23,10 @@ This document gives an overview of variables used in the platform of the terrafo
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | :-: |
 | default_branch | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
+| deploy_keys | The name of repositories. | <pre>list(object({<br> title = string<br> key = string<br> read_only = bool<br> }))</pre> | `[]` | no |
 | description | The description of the repository. | `string` | n/a | yes |
-| key | filename pub for repository deploy key. | `string` | `null` | no |
 | name | The name of the repository. | `string` | n/a | yes |
 | pages | Configuratin block for GitHub Pages | <pre>map(object({<br> branch = string<br> path = string<br> cname = string<br> }))</pre> | `{}` | no |
-| read_only | enabled read_only or no. | `bool` | `true` | no |
 | secrets | secrets for repository | `map(any)` | `{}` | no |
 | settings | Create and manage settings. | <pre>map(object({<br> homepage_url = string<br> has_issues = bool<br> has_projects = bool<br> has_wiki = bool<br> is_template = bool<br> allow_merge_commit = bool<br> allow_squash_merge = bool<br> allow_rebase_merge = bool<br> delete_branch_on_merge = bool<br> auto_init = bool<br> gitignore_template = string<br> license_template = string<br> archived = bool<br> archive_on_destroy = bool<br> vulnerability_alerts = bool<br> topics = list(string)<br> }))</pre> | `{}` | no |
 | visibility | The visibility of the repository private or public. | `string` | `"private"` | no |
