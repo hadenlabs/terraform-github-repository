@@ -18,6 +18,21 @@ resource "github_repository" "this" {
       cname = lookup(pages, "cname")
     }
   }
+
+  lifecycle {
+    prevent_destroy = true
+    ignore_changes = [
+      auto_init,
+      has_issues,
+      has_downloads,
+      has_projects,
+      has_wiki,
+      is_template,
+      vulnerability_alerts,
+      topics,
+      description
+    ]
+  }
 }
 
 # Add a deploy key
