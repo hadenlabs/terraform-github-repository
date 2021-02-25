@@ -6,5 +6,11 @@ terraform {
       source  = "integrations/github"
       version = ">=4.3.0"
     }
+
+    local = {
+      source  = "hashicorp/local"
+      version = ">=1.3.0"
+    }
+
   }
 }
