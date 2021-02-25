@@ -47,3 +47,26 @@ variable "default_branch" {
   description = "Name of the Default Branch of the Repository"
   default     = "develop"
 }
+
+# github_repository
+variable "settings" {
+  description = "Create and manage settings."
+  type = map(object({
+    homepage_url           = string
+    has_issues             = bool
+    has_projects           = bool
+    has_wiki               = bool
+    is_template            = bool
+    allow_merge_commit     = bool
+    allow_squash_merge     = bool
+    allow_rebase_merge     = bool
+    delete_branch_on_merge = bool
+    auto_init              = bool
+    gitignore_template     = string
+    license_template       = string
+    archived               = bool
+    archive_on_destroy     = bool
+    vulnerability_alerts   = bool
+    topics                 = list(string)
+  }))
+}

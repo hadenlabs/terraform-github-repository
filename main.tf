@@ -1,12 +1,36 @@
+locals {
+  settings = {
+    auto_init    = true
+    has_issues   = true
+    has_wiki     = true
+    has_projects = true
+  }
+}
+
 resource "github_repository" "this" {
   name        = var.name
   description = var.description
   visibility  = var.visibility
 
-  auto_init    = true
-  has_issues   = true
-  has_wiki     = true
-  has_projects = true
+  for_each = merge(local.settings, var.settings)
+
+  homepage_url           = each.value.homepage_url
+  has_issues             = each.value.has_issues
+  has_projects           = each.value.has_projects
+  has_wiki               = each.value.has_wiki
+  is_template            = each.value.is_template
+  allow_merge_commit     = each.value.allow_merge_commit
+  allow_squash_merge     = each.value.allow_squash_merge
+  allow_rebase_merge     = each.value.allow_rebase_merge
+  delete_branch_on_merge = each.value.delete_branch_on_merge
+  auto_init              = each.value.auto_init
+  gitignore_template     = each.value.gitignore_template
+  license_template       = each.value.license_template
+  archived               = each.value.archived
+  archive_on_destroy     = each.value.archive_on_destroy
+  topics                 = each.value.topics
+  vulnerability_alerts   = each.value.vulnerability_alerts
+
 
   dynamic "pages" {
     for_each = var.pages
