@@ -86,8 +86,11 @@ usage: |-
     name        = "repository-example-with-key"
     description = "github repository for repository"
     visibility  = "public"
-    key = "/usr/etc/key/user.pub"
-    read_only = false
+    deploy_keys = [{
+      title = "user key"
+      key = "/usr/etc/key/user.pub"
+      read_only = false
+    }]
   }
 
   module "main_with_secrets" {
