@@ -14,16 +14,14 @@ variable "visibility" {
   default     = "private"
 }
 
-variable "key" {
-  type        = string
-  description = "filename pub for repository deploy key."
-  default     = null
-}
-
-variable "read_only" {
-  type        = bool
-  description = "enabled read_only or no."
-  default     = true
+variable "deploy_keys" {
+  type = list(object({
+    title     = string
+    key       = string
+    read_only = bool
+  }))
+  description = "The name of repositories."
+  default     = []
 }
 
 variable "secrets" {

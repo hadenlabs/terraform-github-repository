@@ -17,6 +17,7 @@ locals {
     topics                 = []
     vulnerability_alerts   = true
   }
+
   confs = merge(local.settings, var.settings)
 }
 
@@ -73,11 +74,11 @@ resource "github_repository" "this" {
 # Add a deploy key
 resource "github_repository_deploy_key" "this" {
   depends_on = [github_repository.this]
-  count      = try(var.key, null) != null ? 1 : 0
-  title      = var.name
+  count      = length(var.deploy_keys)
+  title      = var.deploy_keys[count.index].title
   repository = github_repository.this.name
-  key        = file(var.key)
-  read_only  = var.read_only
+  key        = file(var.deploy_keys[count.index].key)
+  read_only  = lookup(var.deploy_keys[count.index], "read_only", true)
 }
 
 resource "github_actions_secret" "this" {
