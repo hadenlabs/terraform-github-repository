@@ -16,6 +16,9 @@ module "main_with_key" {
   name        = var.repository_name
   description = var.repository_description
   visibility  = "public"
-  key         = "/usr/etc/key/user.pub"
-  read_only   = false
+  deploy_keys = [{
+    title     = "user key"
+    key       = "/usr/etc/key/user.pub"
+    read_only = false
+  }]
 }
