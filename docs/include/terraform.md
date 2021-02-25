@@ -21,11 +21,13 @@ This document gives an overview of variables used in the platform of the terrafo
 
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | :-: |
+| default_branch | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
 | description | The description of the repository. | `string` | n/a | yes |
 | key | filename pub for repository deploy key. | `string` | `null` | no |
 | name | The name of the repository. | `string` | n/a | yes |
+| pages | Configuratin block for GitHub Pages | <pre>map(object({<br> branch = string<br> path = string<br> cname = string<br> }))</pre> | `{}` | no |
 | read_only | enabled read_only or no. | `bool` | `true` | no |
-| secrets | secrets for repository | `map(any)` | `null` | no |
+| secrets | secrets for repository | `map(any)` | `{}` | no |
 | visibility | The visibility of the repository private or public. | `string` | `"private"` | no |
 
 ## Outputs
