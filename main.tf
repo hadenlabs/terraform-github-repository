@@ -1,5 +1,5 @@
 locals {
-  settings = {
+  default_settings = {
     auto_init              = true
     has_issues             = true
     has_wiki               = true
@@ -14,11 +14,17 @@ locals {
     license_template       = ""
     archived               = false
     archive_on_destroy     = false
-    topics                 = []
     vulnerability_alerts   = true
   }
 
-  confs = merge(local.settings, var.settings)
+  settings = merge(local.default_settings, try(var.settings, {}))
+  default_pages = {
+    branch = var.default_branch
+    path   = "/docs"
+    cname  = ""
+  }
+  pages = merge(local.default_pages, var.pages)
+
 }
 
 resource "github_repository" "this" {
@@ -26,33 +32,30 @@ resource "github_repository" "this" {
   description = var.description
   visibility  = var.visibility
 
-  homepage_url           = local.confs.homepage_url
-  has_issues             = local.confs.has_issues
-  has_projects           = local.confs.has_projects
-  has_wiki               = local.confs.has_wiki
-  is_template            = local.confs.is_template
-  allow_merge_commit     = local.confs.allow_merge_commit
-  allow_squash_merge     = local.confs.allow_squash_merge
-  allow_rebase_merge     = local.confs.allow_rebase_merge
-  delete_branch_on_merge = local.confs.delete_branch_on_merge
-  auto_init              = local.confs.auto_init
-  gitignore_template     = local.confs.gitignore_template
-  license_template       = local.confs.license_template
-  archived               = local.confs.archived
-  archive_on_destroy     = local.confs.archive_on_destroy
-  topics                 = local.confs.topics
-  vulnerability_alerts   = local.confs.vulnerability_alerts
+  homepage_url           = local.settings.homepage_url
+  has_issues             = local.settings.has_issues
+  has_projects           = local.settings.has_projects
+  has_wiki               = local.settings.has_wiki
+  is_template            = local.settings.is_template
+  allow_merge_commit     = local.settings.allow_merge_commit
+  allow_squash_merge     = local.settings.allow_squash_merge
+  allow_rebase_merge     = local.settings.allow_rebase_merge
+  delete_branch_on_merge = local.settings.delete_branch_on_merge
+  auto_init              = local.settings.auto_init
+  gitignore_template     = local.settings.gitignore_template
+  license_template       = local.settings.license_template
+  archived               = local.settings.archived
+  archive_on_destroy     = local.settings.archive_on_destroy
+  vulnerability_alerts   = local.settings.vulnerability_alerts
 
+  topics = var.topics
 
-  dynamic "pages" {
-    for_each = var.pages
-    content {
-      source {
-        branch = lookup(pages, "branch", var.default_branch)
-        path   = lookup(pages, "path", "/docs")
-      }
-      cname = lookup(pages, "cname")
+  pages {
+    source {
+      branch = local.pages.branch
+      path   = local.pages.path
     }
+    cname = local.pages.cname
   }
 
   lifecycle {
@@ -65,7 +68,6 @@ resource "github_repository" "this" {
       has_wiki,
       is_template,
       vulnerability_alerts,
-      topics,
       description
     ]
   }
