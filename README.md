@@ -29,7 +29,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 ```hcl
   module "main" {
     source = "hadenlabs/repository/github"
-    version = "0.5.0"
+    version = "0.6.0"
 
     providers = {
       github = github
@@ -48,7 +48,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 module "main_with_key" {
   source = "hadenlabs/repository/github"
-  version = "0.5.0"
+  version = "0.6.0"
 
   providers = {
     github = github
@@ -66,7 +66,7 @@ module "main_with_key" {
 
 module "main_with_secrets" {
   source = "hadenlabs/repository/github"
-  version = "0.5.0"
+  version = "0.6.0"
 
   providers = {
     github = github
@@ -83,7 +83,7 @@ module "main_with_secrets" {
 
 module "main_with_pages" {
   source = "hadenlabs/repository/github"
-  version = "0.5.0"
+  version = "0.6.0"
 
   providers = {
     github = github
