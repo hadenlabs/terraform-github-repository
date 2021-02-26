@@ -31,13 +31,13 @@ variable "secrets" {
 }
 
 variable "pages" {
-  type = map(object({
-    branch = string
-    path   = string
-    cname  = string
-  }))
-  description = "Configuratin block for GitHub Pages"
-  default     = {}
+  type        = map(any)
+  description = "Configuration block for GitHub Pages"
+  validation {
+    condition     = can([for field in keys(try(var.pages, {})) : !contains(["branch", "path", "cname"], field)])
+    error_message = "ERROR: Key not permitted."
+  }
+  default = {}
 }
 
 variable "default_branch" {
@@ -46,26 +46,21 @@ variable "default_branch" {
   default     = "develop"
 }
 
-# github_repository
 variable "settings" {
+  type        = map(any)
   description = "Create and manage settings."
-  type = map(object({
-    homepage_url           = string
-    has_issues             = bool
-    has_projects           = bool
-    has_wiki               = bool
-    is_template            = bool
-    allow_merge_commit     = bool
-    allow_squash_merge     = bool
-    allow_rebase_merge     = bool
-    delete_branch_on_merge = bool
-    auto_init              = bool
-    gitignore_template     = string
-    license_template       = string
-    archived               = bool
-    archive_on_destroy     = bool
-    vulnerability_alerts   = bool
-    topics                 = list(string)
-  }))
-  default = {}
+  default     = {}
+  validation {
+    condition = can([for field in keys(try(var.settings, {})) : !contains([
+      "auto_init", "has_issues", "has_wiki", "has_projects", "homepage_url", "is_template",
+      "allow_merge_commit", "allow_squash_merge", "allow_rebase_merge", "delete_branch_on_merge",
+    "gitignore_template", "license_template", "archived", "archive_on_destroy", "vulnerability_alerts"], field)])
+    error_message = "ERROR: Key not permitted."
+  }
+}
+
+variable "topics" {
+  type        = list(string)
+  description = "topics of project."
+  default     = []
 }
