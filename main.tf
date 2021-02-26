@@ -73,6 +73,14 @@ resource "github_repository" "this" {
   }
 }
 
+resource "github_repository_project" "this" {
+  depends_on = [github_repository.this]
+  count      = local.settings.has_projects ? 1 : 0
+  name       = lower(var.name)
+  repository = github_repository.this.name
+  body       = var.description
+}
+
 # Add a deploy key
 resource "github_repository_deploy_key" "this" {
   depends_on = [github_repository.this]
