@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.6.0"></a>
+
+## [0.6.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.5.0...0.6.0)
+
+> 2021-02-26
+
+### Code Refactoring
+
+- settings and pages for repository ([#32](https://github.com/hadenlabs/terraform-github-repository/issues/32))
+
+### Features
+
+- implement repository project ([#33](https://github.com/hadenlabs/terraform-github-repository/issues/33))
+
 <a name="0.5.0"></a>
 
 ## [0.5.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.4.0...0.5.0)
