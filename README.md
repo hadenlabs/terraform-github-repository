@@ -30,7 +30,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
   module "main_with_pages" {
     source = "hadenlabs/repository/github"
-    version = "0.6.0"
+    version = "0.7.0"
 
     providers = {
       github = github
