@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.7.0"></a>
+
+## [0.7.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.6.0...0.7.0)
+
+> 2021-02-27
+
+### Features
+
+- implement collaborator for repository ([#34](https://github.com/hadenlabs/terraform-github-repository/issues/34))
+- implement template settings for repository ([#39](https://github.com/hadenlabs/terraform-github-repository/issues/39))
+- change version github to 4.5.0 ([#38](https://github.com/hadenlabs/terraform-github-repository/issues/38))
+
+### Features
+
+- implement section examples include ([#38](https://github.com/hadenlabs/terraform-github-repository/issues/38))
+
 <a name="0.6.0"></a>
 
 ## [0.6.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.5.0...0.6.0)
