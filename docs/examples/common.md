@@ -131,3 +131,35 @@
   }
 
 ```
+
+### implement collaborator
+
+```hcl
+
+  module "main" {
+      source = "hadenlabs/repository/github"
+      version = "0.6.0"
+
+      providers = {
+        github = github
+      }
+
+      name        = "repository-example"
+      description = "github repository for repository"
+      visibility  = "public"
+      settings = {
+        auto_init              = true
+        has_issues             = true
+        has_wiki               = true
+        has_projects           = true
+      }
+
+      collaborators = [
+      {
+        username = "other-user"
+        permission = "push"
+      },
+      ]
+  }
+
+```
