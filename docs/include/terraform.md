@@ -29,6 +29,7 @@ This document gives an overview of variables used in the platform of the terrafo
 | pages | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
 | secrets | secrets for repository | `map(any)` | `{}` | no |
 | settings | Create and manage settings. | `map(any)` | `{}` | no |
+| template | Template Repository to use when creating the Repository | `map(string)` | `{}` | no |
 | topics | topics of project. | `list(string)` | `[]` | no |
 | visibility | The visibility of the repository private or public. | `string` | `"private"` | no |
 
