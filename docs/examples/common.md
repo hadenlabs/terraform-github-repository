@@ -45,6 +45,12 @@
     }]
   }
 
+```
+
+### implement secrets
+
+```hcl
+
   module "main_with_secrets" {
     source = "hadenlabs/repository/github"
     version = "0.6.0"
@@ -92,6 +98,36 @@
       has_projects           = true
       vulnerability_alerts   = true
     }
+  }
+
+```
+
+### implement templates
+
+```hcl
+
+  module "main" {
+      source = "hadenlabs/repository/github"
+      version = "0.6.0"
+
+      providers = {
+        github = github
+      }
+
+      name        = "repository-example"
+      description = "github repository for repository"
+      visibility  = "public"
+      settings = {
+        auto_init              = true
+        has_issues             = true
+        has_wiki               = true
+        has_projects           = true
+      }
+
+      pages = {
+        owner = "owner-user"
+        repository = "name-repository"
+      }
   }
 
 ```
