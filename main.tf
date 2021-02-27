@@ -20,7 +20,7 @@ locals {
   settings = merge(local.default_settings, try(var.settings, {}))
   default_pages = {
     branch = var.default_branch
-    path   = "/docs"
+    path   = "/"
     cname  = ""
   }
   pages = merge(local.default_pages, var.pages)
@@ -50,12 +50,25 @@ resource "github_repository" "this" {
 
   topics = var.topics
 
-  pages {
-    source {
-      branch = local.pages.branch
-      path   = local.pages.path
+  dynamic "pages" {
+    for_each = [local.pages]
+
+    content {
+      source {
+        branch = pages.value.branch
+        path   = pages.value.path
+      }
+      cname = pages.value.cname
     }
-    cname = local.pages.cname
+  }
+
+  dynamic "template" {
+    for_each = length(var.template) != 0 ? [var.template] : []
+
+    content {
+      owner      = lookup(template.value, "owner", null)
+      repository = lookup(template.value, "repository", null)
+    }
   }
 
   lifecycle {
