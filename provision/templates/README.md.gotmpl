@@ -76,9 +76,14 @@ This project is part of our comprehensive [{{ printf (ds "config").company.name}
 
 ## Examples
 
-{{(ds "config").examples }} {{ end }}
+{{ range $file := (datasource "config").examples -}}
+{{ (include "includes" $file) }}
+{{- end }}
+{{- end }}
+
 
 {{ if has (ds "config") "include" }} {{ range $file := (datasource "config").include -}} {{ (include "includes" $file) }} {{- end }} {{- end }}
+
 
 {{ if has (ds "config") "related" }}
 

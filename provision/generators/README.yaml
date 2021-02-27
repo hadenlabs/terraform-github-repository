@@ -56,7 +56,8 @@ description: |-
 # How to use this project
 usage: |-
   ```hcl
-    module "main" {
+
+    module "main_with_pages" {
       source = "hadenlabs/repository/github"
       version = "0.6.0"
 
@@ -64,82 +65,31 @@ usage: |-
         github = github
       }
 
-      name        = "repository-example"
+      name        = "repository-example-with-key"
       description = "github repository for repository"
       visibility  = "public"
+      pages = {
+        branch = "gh-pages"
+        path = "/"
+      }
+
+      topics = [
+          "go",
+          "terraform",
+      ]
+
       settings = {
-        auto_init              = true
-        has_issues             = true
         has_wiki               = true
         has_projects           = true
-    }
-  }
-
-  module "main_with_key" {
-    source = "hadenlabs/repository/github"
-    version = "0.6.0"
-
-    providers = {
-      github = github
-    }
-
-    name        = "repository-example-with-key"
-    description = "github repository for repository"
-    visibility  = "public"
-    deploy_keys = [{
-      title = "user key"
-      key = "/usr/etc/key/user.pub"
-      read_only = false
-    }]
-  }
-
-  module "main_with_secrets" {
-    source = "hadenlabs/repository/github"
-    version = "0.6.0"
-
-    providers = {
-      github = github
-    }
-
-    name        = "repository-example-with-key"
-    description = "github repository for repository"
-    visibility  = "public"
-    secrets = {
-      key= value
-    }
-
-  }
-
-  module "main_with_pages" {
-    source = "hadenlabs/repository/github"
-    version = "0.6.0"
-
-    providers = {
-      github = github
-    }
-
-    name        = "repository-example-with-key"
-    description = "github repository for repository"
-    visibility  = "public"
-    pages = {
-      branch = "gh-pages"
-      path = "/"
-    }
-
-    topics = [
-        "go",
-        "terraform",
-    ]
-
-    settings = {
-      has_wiki               = true
-      has_projects           = true
-      vulnerability_alerts   = true
-    }
+        vulnerability_alerts   = true
+      }
 
   ```
 
   Full working example can be found in [example](./example) folder.
+
+examples:
+  - 'docs/examples/common.md'
 
 include:
   - 'docs/include/targets.md'
