@@ -22,6 +22,7 @@ This document gives an overview of variables used in the platform of the terrafo
 
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | :-: |
+| collaborators | List of Collaborator Objects | <pre>list(object({<br> username = string<br> permission = string<br> }))</pre> | `[]` | no |
 | default_branch | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
 | deploy_keys | The name of repositories. | <pre>list(object({<br> title = string<br> key = string<br> read_only = bool<br> }))</pre> | `[]` | no |
 | description | The description of the repository. | `string` | n/a | yes |
