@@ -67,7 +67,7 @@ Full working example can be found in [example](./example) folder.
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.6.0"
+      version = "0.7.0"
 
       providers = {
         github = github
@@ -92,7 +92,7 @@ Full working example can be found in [example](./example) folder.
 
   module "main_with_key" {
     source = "hadenlabs/repository/github"
-    version = "0.6.0"
+    version = "0.7.0"
 
     providers = {
       github = github
@@ -116,7 +116,7 @@ Full working example can be found in [example](./example) folder.
 
   module "main_with_secrets" {
     source = "hadenlabs/repository/github"
-    version = "0.6.0"
+    version = "0.7.0"
 
     providers = {
       github = github
@@ -137,7 +137,7 @@ Full working example can be found in [example](./example) folder.
 
   module "main_with_pages" {
     source = "hadenlabs/repository/github"
-    version = "0.6.0"
+    version = "0.7.0"
 
     providers = {
       github = github
@@ -171,7 +171,7 @@ Full working example can be found in [example](./example) folder.
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.6.0"
+      version = "0.7.0"
 
       providers = {
         github = github
@@ -201,7 +201,7 @@ Full working example can be found in [example](./example) folder.
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.6.0"
+      version = "0.7.0"
 
       providers = {
         github = github
