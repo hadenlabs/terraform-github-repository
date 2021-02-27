@@ -23,7 +23,6 @@ locals {
     path   = "/"
     cname  = ""
   }
-  pages = merge(local.default_pages, var.pages)
 
 }
 
@@ -51,14 +50,14 @@ resource "github_repository" "this" {
   topics = var.topics
 
   dynamic "pages" {
-    for_each = [local.pages]
+    for_each = length(var.pages) != 0 ? [var.pages] : []
 
     content {
       source {
-        branch = pages.value.branch
-        path   = pages.value.path
+        branch = lookup(pages.value, "branch", local.default_pages.branch)
+        path   = lookup(pages.value, "path", local.default_pages.path)
       }
-      cname = pages.value.cname
+      cname = lookup(pages.value, "cname", local.default_pages.cname)
     }
   }
 
