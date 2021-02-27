@@ -105,11 +105,21 @@ resource "github_repository_deploy_key" "this" {
 }
 
 resource "github_actions_secret" "this" {
+  depends_on      = [github_repository.this]
   for_each        = var.secrets
   repository      = github_repository.this.name
   secret_name     = each.key
   plaintext_value = each.value
-  depends_on      = [github_repository.this]
+}
+
+resource "github_repository_collaborator" "this" {
+  depends_on = [github_repository.this]
+  count      = length(var.collaborators)
+
+  repository                  = github_repository.this.name
+  username                    = var.collaborators[count.index].username
+  permission                  = lookup(var.collaborators[count.index], "permission", "push")
+  permission_diff_suppression = lookup(var.collaborators[count.index], "permission_diff_suppression", false)
 }
 
 resource "github_issue_label" "kind_bug" {

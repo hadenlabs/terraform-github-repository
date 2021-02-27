@@ -74,3 +74,13 @@ variable "template" {
   }
   default = {}
 }
+
+variable "collaborators" {
+  type = list(object({
+    username   = string
+    permission = string
+  }))
+
+  description = "List of Collaborator Objects"
+  default     = []
+}
