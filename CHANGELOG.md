@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.7.1"></a>
+
+## [0.7.1](https://github.com/hadenlabs/terraform-github-repository/compare/0.7.0...0.7.1)
+
+> 2021-02-27
+
+### Bug Fixes
+
+- change pages var for settings repository ([#44](https://github.com/hadenlabs/terraform-github-repository/issues/44))
+
 <a name="0.7.0"></a>
 
 ## [0.7.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.6.0...0.7.0)
