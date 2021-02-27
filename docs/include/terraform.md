@@ -8,15 +8,15 @@ This document gives an overview of variables used in the platform of the terrafo
 
 | Name      | Version |
 | --------- | ------- |
-| terraform | >= 0.13 |
-| github    | >=4.3.0 |
+| terraform | >= 0.14 |
+| github    | >=4.5.0 |
 | local     | >=1.3.0 |
 
 ## Providers
 
 | Name   | Version |
 | ------ | ------- |
-| github | >=4.3.0 |
+| github | >=4.5.0 |
 
 ## Inputs
 
