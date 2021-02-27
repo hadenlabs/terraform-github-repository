@@ -64,3 +64,13 @@ variable "topics" {
   description = "topics of project."
   default     = []
 }
+
+variable "template" {
+  type        = map(string)
+  description = "Template Repository to use when creating the Repository"
+  validation {
+    condition     = can([for field in keys(try(var.template, {})) : !contains(["owner", "repository", ], field)])
+    error_message = "ERROR: Key not permitted."
+  }
+  default = {}
+}
