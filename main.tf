@@ -1,6 +1,6 @@
 locals {
   default_settings = {
-    auto_init              = true
+    auto_init              = false
     has_issues             = true
     has_wiki               = true
     has_projects           = true
