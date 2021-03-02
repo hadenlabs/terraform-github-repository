@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.7.2"></a>
+
+## [0.7.2](https://github.com/hadenlabs/terraform-github-repository/compare/0.7.1...0.7.2)
+
+> 2021-03-02
+
+### Bug Fixes
+
+- default settings auto_init to false ([#46](https://github.com/hadenlabs/terraform-github-repository/issues/46))
+- change pages var for settings repository ([#44](https://github.com/hadenlabs/terraform-github-repository/issues/44))
+
+### Features
+
+- implement actions for git ([#46](https://github.com/hadenlabs/terraform-github-repository/issues/46))
+
+### Performance Improvements
+
+- validation files pre-commit ([#46](https://github.com/hadenlabs/terraform-github-repository/issues/46))
+
 <a name="0.7.1"></a>
 
 ## [0.7.1](https://github.com/hadenlabs/terraform-github-repository/compare/0.7.0...0.7.1)
