@@ -4,7 +4,7 @@
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.7.1"
+      version = "0.7.2"
 
       providers = {
         github = github
@@ -29,7 +29,7 @@
 
   module "main_with_key" {
     source = "hadenlabs/repository/github"
-    version = "0.7.1"
+    version = "0.7.2"
 
     providers = {
       github = github
@@ -53,7 +53,7 @@
 
   module "main_with_secrets" {
     source = "hadenlabs/repository/github"
-    version = "0.7.1"
+    version = "0.7.2"
 
     providers = {
       github = github
@@ -74,7 +74,7 @@
 
   module "main_with_pages" {
     source = "hadenlabs/repository/github"
-    version = "0.7.1"
+    version = "0.7.2"
 
     providers = {
       github = github
@@ -108,7 +108,7 @@
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.7.1"
+      version = "0.7.2"
 
       providers = {
         github = github
@@ -138,7 +138,7 @@
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.7.1"
+      version = "0.7.2"
 
       providers = {
         github = github
