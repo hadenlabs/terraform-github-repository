@@ -42,12 +42,15 @@ github_repo: hadenlabs/terraform-github-repository
 
 # Badges to display
 badges:
-  - name: 'Build Status'
-    image: 'https://travis-ci.org/hadenlabs/terraform-github-repository.svg?branch=main'
-    url: 'https://travis-ci.org/hadenlabs/terraform-github-repository'
-  - name: 'Latest Release'
-    image: 'https://img.shields.io/github/release/hadenlabs/terraform-github-repository.svg'
-    url: 'https://travis-ci.org/hadenlabs/terraform-github-repository/releases'
+  - name: Lint
+    image: https://github.com/hadenlabs/terraform-github-repository/actions/workflows/lint.yml/badge.svg?branch=develop
+    url: https://github.com/hadenlabs/terraform-github-repository/actions
+  - name: Issues
+    image: https://img.shields.io/github/issues/hadenlabs/terraform-github-repository.svg
+    url: https://github.com/hadenlabs/terraform-github-repository/issues
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/terraform-github-repository.svg
+    url: https://github.com/hadenlabs/terraform-github-repository/releases
 
 # Short description of this project
 description: |-
@@ -94,8 +97,3 @@ examples:
 include:
   - 'docs/include/targets.md'
   - 'docs/include/terraform.md'
-
-# Contributors to this project
-contributors:
-  - name: 'Luis Mayta'
-    github: 'luismayta'
