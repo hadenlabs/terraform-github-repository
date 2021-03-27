@@ -16,18 +16,6 @@ tags:
 categories:
   - terraform-modules/github
 
-company:
-  name: hadenlabs
-  description: |-
-    company labs
-  url: https://hadenlabs.com
-  github: https://github.com/hadenlabs
-  email: support@hadenlabs.com
-
-copyright:
-  name: Hadenlabs
-  url: https://hadenlabs.com
-
 email:
   support: support@hadenlabs.com
 
@@ -35,7 +23,7 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'APACHE2'
+license: 'LGPL-3.0'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/terraform-github-repository
