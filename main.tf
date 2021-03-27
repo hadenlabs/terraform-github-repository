@@ -85,6 +85,19 @@ resource "github_repository" "this" {
   }
 }
 
+resource "github_repository_file" "this" {
+  depends_on          = [github_repository.this]
+  for_each            = var.files
+  repository          = github_repository.this.name
+  branch              = each.value.branch
+  file                = each.value.file
+  content             = each.value.content
+  commit_message      = each.value.commit_message
+  commit_author       = each.value.commit_author
+  commit_email        = each.value.commit_email
+  overwrite_on_create = each.value.overwrite_on_create
+}
+
 resource "github_repository_project" "this" {
   depends_on = [github_repository.this]
   count      = local.settings.has_projects ? 1 : 0
