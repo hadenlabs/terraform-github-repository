@@ -84,3 +84,17 @@ variable "collaborators" {
   description = "List of Collaborator Objects"
   default     = []
 }
+
+variable "files" {
+  type = list(object({
+    branch              = string
+    file                = string
+    content             = string
+    commit_message      = string
+    commit_author       = string
+    commit_email        = string
+    overwrite_on_create = bool
+  }))
+  description = "list files for repository"
+  default     = []
+}
