@@ -12,3 +12,8 @@ output "deploy_key" {
   description = "output instance deploy_key"
   value       = github_repository_deploy_key.this
 }
+
+output "files" {
+  description = "output instance github files"
+  value       = github_repository_file.this
+}
