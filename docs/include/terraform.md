@@ -24,6 +24,7 @@ This document gives an overview of variables used in the platform of the terrafo
 | deploy\_keys | The name of repositories. | <pre>list(object({<br>    title     = string<br>    key       = string<br>    read_only = bool<br>  }))</pre> | `[]` | no |
 | description | The description of the repository. | `string` | n/a | yes |
 | files | list files for repository | <pre>list(object({<br>    branch              = string<br>    file                = string<br>    content             = string<br>    commit_message      = string<br>    commit_author       = string<br>    commit_email        = string<br>    overwrite_on_create = bool<br>  }))</pre> | `[]` | no |
+| is\_git\_flow | Git Flow - Github Flow | `bool` | `false` | no |
 | name | The name of the repository. | `string` | n/a | yes |
 | pages | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
 | secrets | secrets for repository | `map(any)` | `{}` | no |
