@@ -3,6 +3,12 @@ variable "name" {
   description = "The name of the repository."
 }
 
+variable "is_git_flow" {
+  type        = bool
+  description = "Git Flow - Github Flow"
+  default     = false
+}
+
 variable "description" {
   type        = string
   description = "The description of the repository."
