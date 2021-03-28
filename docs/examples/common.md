@@ -193,3 +193,23 @@
   }
 
 ```
+
+### implement with gitflow enabled
+
+```
+  module "repository_file" {
+    providers = {
+      github = github
+    }
+    source      = "hadenlabs/repository/github"
+    version     = "0.7.2"
+    name        = "repository-example"
+    is_git_flow = true
+    description = "repository example"
+    visibility  = "public"
+    settings = {
+      auto_init = true
+    }
+  }
+
+```
