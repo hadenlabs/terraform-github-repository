@@ -163,3 +163,33 @@
   }
 
 ```
+
+### implement with file
+
+```
+  module "repository_file" {
+    providers = {
+      github = github
+    }
+    source      = "hadenlabs/repository/github"
+    version     = "0.7.2"
+    name        = "repository-example"
+    description = "repository example"
+    visibility  = "public"
+    settings = {
+      auto_init = true
+    }
+    files = [
+        {
+          branch              = "main"
+          file                = "LICENSE"
+          content             = file(format("%s/LICENSE", path.module))
+          commit_message      = "ci: implement template"
+          commit_author       = "@slovacus"
+          commit_email        = "slovacus@gmail.com"
+          overwrite_on_create = true
+        },
+    ]
+  }
+
+```
