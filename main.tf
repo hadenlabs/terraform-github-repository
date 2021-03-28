@@ -87,15 +87,22 @@ resource "github_repository" "this" {
 
 resource "github_repository_file" "this" {
   depends_on          = [github_repository.this]
-  for_each            = var.files
+  count               = length(var.files)
   repository          = github_repository.this.name
-  branch              = each.value.branch
-  file                = each.value.file
-  content             = each.value.content
-  commit_message      = each.value.commit_message
-  commit_author       = each.value.commit_author
-  commit_email        = each.value.commit_email
-  overwrite_on_create = each.value.overwrite_on_create
+  branch              = var.files[count.index].branch
+  file                = var.files[count.index].file
+  content             = var.files[count.index].content
+  commit_message      = var.files[count.index].commit_message
+  commit_author       = var.files[count.index].commit_author
+  commit_email        = var.files[count.index].commit_email
+  overwrite_on_create = lookup(var.files[count.index], "overwrite_on_create", true)
+  lifecycle {
+    ignore_changes = [
+      content,
+      branch,
+      commit_message
+    ]
+  }
 }
 
 resource "github_repository_project" "this" {
