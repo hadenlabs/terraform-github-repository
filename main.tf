@@ -85,6 +85,27 @@ resource "github_repository" "this" {
   }
 }
 
+resource "github_branch" "develop" {
+  count = var.is_git_flow ? 1 : 0
+
+  repository = github_repository.this.name
+  branch     = "develop"
+
+  depends_on = [github_repository.this]
+}
+
+resource "github_branch_default" "develop_default" {
+  count = var.is_git_flow ? 1 : 0
+
+  repository = github_repository.this.name
+  branch     = "develop"
+
+  depends_on = [
+    github_branch.develop,
+    github_repository.this
+  ]
+}
+
 resource "github_repository_file" "this" {
   depends_on          = [github_repository.this]
   count               = length(var.files)
