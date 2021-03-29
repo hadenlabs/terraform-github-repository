@@ -4,7 +4,7 @@
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.7.2"
+      version = "0.8.0"
 
       providers = {
         github = github
@@ -29,7 +29,7 @@
 
   module "main_with_key" {
     source = "hadenlabs/repository/github"
-    version = "0.7.2"
+    version = "0.8.0"
 
     providers = {
       github = github
@@ -53,7 +53,7 @@
 
   module "main_with_secrets" {
     source = "hadenlabs/repository/github"
-    version = "0.7.2"
+    version = "0.8.0"
 
     providers = {
       github = github
@@ -74,7 +74,7 @@
 
   module "main_with_pages" {
     source = "hadenlabs/repository/github"
-    version = "0.7.2"
+    version = "0.8.0"
 
     providers = {
       github = github
@@ -108,7 +108,7 @@
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.7.2"
+      version = "0.8.0"
 
       providers = {
         github = github
@@ -138,7 +138,7 @@
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.7.2"
+      version = "0.8.0"
 
       providers = {
         github = github
@@ -172,7 +172,7 @@
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.7.2"
+    version     = "0.8.0"
     name        = "repository-example"
     description = "repository example"
     visibility  = "public"
@@ -202,7 +202,7 @@
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.7.2"
+    version     = "0.8.0"
     name        = "repository-example"
     is_git_flow = true
     description = "repository example"
