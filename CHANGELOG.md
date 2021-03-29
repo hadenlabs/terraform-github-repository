@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.8.0"></a>
+
+## [0.8.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.7.2...0.8.0)
+
+> 2021-03-28
+
+### Bug Fixes
+
+- implement file to repository ([#51](https://github.com/hadenlabs/terraform-github-repository/issues/51))
+- name load template gomplate ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+- default settings auto_init to false ([#46](https://github.com/hadenlabs/terraform-github-repository/issues/46))
+
+### Code Refactoring
+
+- dependences python and node ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+- template generator readme ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+- travis to github actions ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+- actions make ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+- change lints commit ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+
+### Features
+
+- implement gitflow enabled ([#55](https://github.com/hadenlabs/terraform-github-repository/issues/55))
+- implement files for github repository ([#51](https://github.com/hadenlabs/terraform-github-repository/issues/51))
+- implement license lgpl 3 ([#52](https://github.com/hadenlabs/terraform-github-repository/issues/52))
+- standard license lgpl 3 ([#52](https://github.com/hadenlabs/terraform-github-repository/issues/52))
+- implement validation issues time with stale ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+
+### Features
+
+- implement actions for git ([#46](https://github.com/hadenlabs/terraform-github-repository/issues/46))
+
+### Performance Improvements
+
+- validation files pre-commit ([#46](https://github.com/hadenlabs/terraform-github-repository/issues/46))
+
 <a name="0.7.2"></a>
 
 ## [0.7.2](https://github.com/hadenlabs/terraform-github-repository/compare/0.7.1...0.7.2)
