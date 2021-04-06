@@ -178,7 +178,7 @@ resource "github_issue_label" "kind_discussion" {
 
 resource "github_issue_label" "kind_documentation" {
   repository  = github_repository.this.name
-  name        = "kind/documentation"
+  name        = "kind/docs"
   description = "Categorizes issue or PR as related to documentation."
   color       = "5319e7"
 }
@@ -187,6 +187,27 @@ resource "github_issue_label" "kind_feature" {
   repository  = github_repository.this.name
   name        = "kind/feature"
   description = "Categorizes issue or PR as related to a new feature."
+  color       = "1d76db"
+}
+
+resource "github_issue_label" "kind_refactor" {
+  repository  = github_repository.this.name
+  name        = "kind/refactor"
+  description = "Categorizes issue or PR as related to a new refactor."
+  color       = "1d76db"
+}
+
+resource "github_issue_label" "kind_perf" {
+  repository  = github_repository.this.name
+  name        = "kind/perf"
+  description = "Categorizes issue or PR as related to a new performance."
+  color       = "1d76db"
+}
+
+resource "github_issue_label" "kind_chore" {
+  repository  = github_repository.this.name
+  name        = "kind/chore"
+  description = "Categorizes issue or PR as related to a new chore."
   color       = "1d76db"
 }
 
