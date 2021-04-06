@@ -25,10 +25,13 @@ No modules.
 | [github_branch.develop](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch_default.develop_default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
 | [github_issue_label.kind_bug](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
+| [github_issue_label.kind_chore](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_issue_label.kind_discussion](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_issue_label.kind_documentation](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_issue_label.kind_feature](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
+| [github_issue_label.kind_perf](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_issue_label.kind_question](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
+| [github_issue_label.kind_refactor](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_issue_label.priority_critical](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_issue_label.priority_high](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_issue_label.priority_low](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
