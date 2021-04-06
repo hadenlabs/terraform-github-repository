@@ -66,6 +66,7 @@
       key= value
     }
   }
+
 ```
 
 ### implement pages
@@ -166,7 +167,8 @@
 
 ### implement with file
 
-```
+```hcl
+
   module "repository_file" {
     providers = {
       github = github
@@ -196,7 +198,8 @@
 
 ### implement with gitflow enabled
 
-```
+```hcl
+
   module "repository_file" {
     providers = {
       github = github
