@@ -30,6 +30,9 @@ github_repo: hadenlabs/terraform-github-repository
 
 # Badges to display
 badges:
+  - name: GitHub tag (latest SemVer)
+    image: https://img.shields.io/github/v/tag/hadenlabs/terraform-github-repository.svg?label=latest&sort=semver
+    url: https://github.com/hadenlabs/terraform-github-repository/releases
   - name: Lint
     image: https://github.com/hadenlabs/terraform-github-repository/actions/workflows/lint.yml/badge.svg?branch=develop
     url: https://github.com/hadenlabs/terraform-github-repository/actions
@@ -39,6 +42,9 @@ badges:
   - name: Latest Release
     image: https://img.shields.io/github/release/hadenlabs/terraform-github-repository.svg
     url: https://github.com/hadenlabs/terraform-github-repository/releases
+  - name: Beacon
+    image: https://ga-beacon.appspot.com/G-MZEK48EGE8/terraform-github-repository/readme
+    url: https://github.com/hadenlabs/terraform-github-repository
 
 # Short description of this project
 description: |-
