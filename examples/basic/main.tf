@@ -2,7 +2,7 @@ module "main" {
   providers = {
     github = github
   }
-  source      = "git://github.com/hadenlabs/terraform-github-repository.git?ref=0.8.0"
+  source      = "../"
   name        = var.repository_name
   description = var.repository_description
   visibility  = "public"
@@ -12,7 +12,7 @@ module "main_with_key" {
   providers = {
     github = github
   }
-  source      = "git://github.com/hadenlabs/terraform-github-repository.git?ref=0.8.0"
+  source      = "../"
   name        = var.repository_name
   description = var.repository_description
   visibility  = "public"
