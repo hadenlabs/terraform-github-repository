@@ -17,7 +17,6 @@ extra:
 
 repo_name: 'hadenlabs/terraform-github-repository'
 repo_url: 'https://github.com/hadenlabs/terraform-github-repository'
-copyright: 'Copyright © 2021 <a href="https://hadenlabs.com">hadenlabs</a>'
 
 google_analytics:
   - ''

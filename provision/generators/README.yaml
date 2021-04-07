@@ -23,7 +23,7 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'LGPL-3.0'
+license: 'LGPLV3'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/terraform-github-repository
@@ -52,6 +52,7 @@ description: |-
 
 # How to use this project
 usage: |-
+
   ```hcl
 
     module "main_with_pages" {
@@ -83,7 +84,7 @@ usage: |-
 
   ```
 
-  Full working example can be found in [example](./example) folder.
+  Full working examples can be found in [examples](./examples) folder.
 
 examples:
   - 'docs/examples/common.md'
