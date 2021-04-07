@@ -87,6 +87,7 @@ setup:
 	@[ -e ".env" ] || cp -rf .env.example .env
 	make yarn.setup
 	make git.setup
+	make go.setup
 	@echo ${MESSAGE_HAPPY}
 
 ## setup environment of project
