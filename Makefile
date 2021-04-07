@@ -28,6 +28,9 @@ PYTHON_VERSION=3.8.0
 NODE_VERSION=14.15.5
 PYENV_NAME="${PROJECT}"
 GIT_IGNORES:=python,node,go,terraform
+GIT_IGNORES_CUSTOM:= bin \
+	bin
+
 GI:=gi
 
 # issues reviewers
