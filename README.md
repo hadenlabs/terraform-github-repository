@@ -24,7 +24,7 @@ Terraform module to provision an github repository.
 
   module "main_with_pages" {
     source = "hadenlabs/repository/github"
-    version = "0.8.0"
+    version = "0.9.0"
 
     providers = {
       github = github
@@ -61,7 +61,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.8.0"
+      version = "0.9.0"
 
       providers = {
         github = github
@@ -86,7 +86,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main_with_key" {
     source = "hadenlabs/repository/github"
-    version = "0.8.0"
+    version = "0.9.0"
 
     providers = {
       github = github
@@ -110,7 +110,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main_with_secrets" {
     source = "hadenlabs/repository/github"
-    version = "0.8.0"
+    version = "0.9.0"
 
     providers = {
       github = github
@@ -132,7 +132,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main_with_pages" {
     source = "hadenlabs/repository/github"
-    version = "0.8.0"
+    version = "0.9.0"
 
     providers = {
       github = github
@@ -166,7 +166,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.8.0"
+      version = "0.9.0"
 
       providers = {
         github = github
@@ -196,7 +196,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.8.0"
+      version = "0.9.0"
 
       providers = {
         github = github
@@ -231,7 +231,7 @@ Full working examples can be found in [examples](./examples) folder.
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.8.0"
+    version     = "0.9.0"
     name        = "repository-example"
     description = "repository example"
     visibility  = "public"
@@ -262,7 +262,7 @@ Full working examples can be found in [examples](./examples) folder.
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.8.0"
+    version     = "0.9.0"
     name        = "repository-example"
     is_git_flow = true
     description = "repository example"
