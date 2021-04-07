@@ -11,17 +11,17 @@ import (
 func TestRepositoryBasicPublicSuccess(t *testing.T) {
 	t.Parallel()
 
-  const VISIBILITY string = "public"
-  const REPOSITORY string = "test-repository"
-  const DESCRIPTION string = "description"
+	const VISIBILITY string = "public"
+	const REPOSITORY string = "test-repository"
+	const DESCRIPTION string = "description"
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
 		TerraformDir: "repository-basic-public",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
-			"visibility": VISIBILITY,
-			"name": REPOSITORY,
+			"visibility":  VISIBILITY,
+			"name":        REPOSITORY,
 			"description": DESCRIPTION,
 		},
 	}
@@ -34,7 +34,7 @@ func TestRepositoryBasicPublicSuccess(t *testing.T) {
 
 	outputRepositoryName := terraform.Output(t, terraformOptions, "repository_name")
 	outputRepository := terraform.OutputMapOfObjects(t, terraformOptions, "instance")
-  validateRepositoryName := strings.ReplaceAll(outputRepositoryName, "\"", "")
+	validateRepositoryName := strings.ReplaceAll(outputRepositoryName, "\"", "")
 	assert.Equal(t, REPOSITORY, validateRepositoryName)
-  assert.NotEmpty(t, outputRepository, outputRepository)
+	assert.NotEmpty(t, outputRepository, outputRepository)
 }
