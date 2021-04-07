@@ -1,15 +1,16 @@
 # go
-.PHONY: go.help
 
 GOLANGCI_VERSION ?= 1.39.0
 
 GOPATH	= $(shell go env GOPATH)
 GOBIN	= $(GOPATH)/bin
 
+GO_FILES = $(shell find ./ -type f -name '*.go' | grep -v '/vendor/' | sort -u)
+
 # Bin variables
 GOLANGCI-LINT = $(GOBIN)/golangci-lint
-PROJECT_BUILD_SRCS = $(shell find ./ -type f -name '*.go' | grep -v '/vendor/' | sort | uniq)
 
+## show help commands
 .PHONY: go.help
 go.help:
 	@echo '    go:'
@@ -23,6 +24,7 @@ go.help:
 	@echo '        go.build           build application'
 	@echo ''
 
+## show help
 .PHONY: go
 go:
 	@if [ -z "${command}" ]; then \
@@ -37,7 +39,7 @@ bin/golangci-lint-${GOLANGCI_VERSION}:
 bin/golangci-lint: bin/golangci-lint-${GOLANGCI_VERSION}
 	@ln -sf golangci-lint-${GOLANGCI_VERSION} bin/golangci-lint
 
-## Run linter
+## Run linter go
 .PHONY: go.lint
 go.lint: bin/golangci-lint
 	bin/golangci-lint run --config .github/linters/.golangci.yml
@@ -60,7 +62,7 @@ go.build: bin/goreleaser
 ## gofmt and goimports all go files
 .PHONY: go.fmt
 go.fmt:
-	gofmt -s -l -w $(PROJECT_BUILD_SRCS)
+	gofmt -s -l -w $(GO_FILES)
 
 ## setup download and install dependence.
 .PHONY: go.environment
