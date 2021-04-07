@@ -106,6 +106,7 @@ repos:
       - id: no-go-testing
       - id: golangci-lint
         args:
+          - '--fix'
           - --config=.github/linters/.golangci.yml
       - id: terraform-docs
         args:
