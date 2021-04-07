@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.9.0"></a>
+
+## [0.9.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.8.0...0.9.0)
+
+> 2021-04-07
+
+### Bug Fixes
+
+- version pre-commit hooks golangci lint ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- name action make environment to setup ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+
+### Code Refactoring
+
+- implement output name ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- links information command go ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- configuration golang ci ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- actions go ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- actions make ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- example to examples ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- dependences python ([#58](https://github.com/hadenlabs/terraform-github-repository/issues/58))
+- generator readme ([#58](https://github.com/hadenlabs/terraform-github-repository/issues/58))
+- actions make ([#58](https://github.com/hadenlabs/terraform-github-repository/issues/58))
+- hooks pre-commit ([#58](https://github.com/hadenlabs/terraform-github-repository/issues/58))
+
+### Features
+
+- implement command go setup ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- implement dependences go ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- implement configuration golangci lint ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- implement issue label ([#58](https://github.com/hadenlabs/terraform-github-repository/issues/58))
+- implement settings project ([#1](https://github.com/hadenlabs/terraform-github-repository/issues/1))
+- implement validation issues time with stale ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+- implement validation issues time with stale ([#49](https://github.com/hadenlabs/terraform-github-repository/issues/49))
+
+### Performance Improvements
+
+- ignore path prettier vendor ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+- clean dependences unnecessary ([#60](https://github.com/hadenlabs/terraform-github-repository/issues/60))
+
 <a name="0.8.0"></a>
 
 ## [0.8.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.7.2...0.8.0)
