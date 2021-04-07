@@ -40,12 +40,12 @@ bin/golangci-lint: bin/golangci-lint-${GOLANGCI_VERSION}
 ## Run linter
 .PHONY: go.lint
 go.lint: bin/golangci-lint
-	bin/golangci-lint run
+	bin/golangci-lint run --config .github/linters/.golangci.yml
 
 ## Fix lint violations
 .PHONY: go.fix
 go.fix: bin/golangci-lint
-	bin/golangci-lint run --fix
+	bin/golangci-lint run --fix --config .github/linters/.golangci.yml
 
 ## Run go vet against code
 .PHONY: go.vet
@@ -63,8 +63,8 @@ go.fmt:
 	gofmt -s -l -w $(PROJECT_BUILD_SRCS)
 
 ## setup download and install dependence.
-.PHONY: go.setup
-go.setup:
+.PHONY: go.environment
+go.environment:
 	go mod download
 	go mod tidy
 	go mod vendor
