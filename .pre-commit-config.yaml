@@ -89,7 +89,7 @@ repos:
         additional_dependencies:
           - black
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 3602b5473c83c9c2b7d1c930b545751366176d7b
+    rev: dbe849b0adf6fd77b8faee74cd02b8efcd7871dd
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
@@ -106,6 +106,7 @@ repos:
       - id: no-go-testing
       - id: golangci-lint
         args:
+          - --fix
           - --config=.github/linters/.golangci.yml
       - id: terraform-docs
         args:
