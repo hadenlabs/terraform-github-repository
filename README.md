@@ -351,6 +351,7 @@ No modules.
 | <a name="output_deploy_key"></a> [deploy_key](#output_deploy_key) | output instance deploy_key |
 | <a name="output_files"></a> [files](#output_files) | output instance github files |
 | <a name="output_instance"></a> [instance](#output_instance) | output instance repository |
+| <a name="output_name"></a> [name](#output_name) | output name repository |
 | <a name="output_secrets"></a> [secrets](#output_secrets) | output instance github actions secrets |
 
 <!-- END_TF_DOCS -->
