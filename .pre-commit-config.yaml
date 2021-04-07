@@ -89,7 +89,7 @@ repos:
         additional_dependencies:
           - black
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 104e7b2376a8745a8871f31115f83364877044ad
+    rev: 3602b5473c83c9c2b7d1c930b545751366176d7b
     hooks:
       - id: do-not-commit
       - id: markdown-link-check

@@ -46,6 +46,8 @@ linters:
     - wsl
     - testpackage
     - goerr113
+    - interfacer
+    - scopelint
 
     # Drives todos nuts
     - godox
@@ -69,6 +71,7 @@ issues:
         - staticcheck
         - ineffassign
         - unparam
+        - exhaustivestruct
     - path: cmd/
       linters:
         - gocyclo
