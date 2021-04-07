@@ -29,7 +29,8 @@ locals {
 resource "github_repository" "this" {
   name        = var.name
   description = var.description
-  visibility  = var.visibility
+  #checkov:skip=CKV_GIT_1:The resource github is module
+  visibility = var.visibility
 
   homepage_url           = local.settings.homepage_url
   has_issues             = local.settings.has_issues
