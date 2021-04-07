@@ -3,6 +3,11 @@ output "instance" {
   value       = github_repository.this
 }
 
+output "name" {
+  description = "output name repository"
+  value       = github_repository.this.name
+}
+
 output "secrets" {
   description = "output instance github actions secrets"
   value       = github_actions_secret.this
