@@ -5,7 +5,7 @@ default_language_version:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit
-    rev: v2.11.1
+    rev: v2.12.0
     hooks:
       - id: validate_manifest
   - repo: https://github.com/codespell-project/codespell
@@ -89,7 +89,7 @@ repos:
         additional_dependencies:
           - black
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 54f081295d8de3f753e15e8b6a62dbc8e77ca38a
+    rev: 104e7b2376a8745a8871f31115f83364877044ad
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
@@ -105,7 +105,8 @@ repos:
       - id: validate-toml
       - id: no-go-testing
       - id: golangci-lint
-
+        args:
+          - --config=.github/linters/.golangci.yml
       - id: terraform-docs
         args:
           - '--output-file=docs/include/terraform.md'
