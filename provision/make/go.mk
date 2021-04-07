@@ -65,8 +65,8 @@ go.fmt:
 	gofmt -s -l -w $(GO_FILES)
 
 ## setup download and install dependence.
-.PHONY: go.environment
-go.environment:
+.PHONY: go.setup
+go.setup:
 	go mod download
 	go mod tidy
 	go mod vendor
