@@ -57,7 +57,7 @@ usage: |-
 
     module "main_with_pages" {
       source = "hadenlabs/repository/github"
-      version = "0.8.0"
+      version = "0.9.0"
 
       providers = {
         github = github
