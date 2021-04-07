@@ -74,5 +74,6 @@ No modules.
 | <a name="output_deploy_key"></a> [deploy\_key](#output\_deploy\_key) | output instance deploy\_key |
 | <a name="output_files"></a> [files](#output\_files) | output instance github files |
 | <a name="output_instance"></a> [instance](#output\_instance) | output instance repository |
+| <a name="output_name"></a> [name](#output\_name) | output name repository |
 | <a name="output_secrets"></a> [secrets](#output\_secrets) | output instance github actions secrets |
 <!-- END_TF_DOCS -->
