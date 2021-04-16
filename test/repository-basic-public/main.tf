@@ -1,12 +1,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# CREATE A SECRET FOR ORGANIZATION
-# This example will create a secrets for organization github.
+# CREATE A REPOSITORY FOR GITHUB
+# This example will create a repository for github.
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# ---------------------------------------------------------------------------------------------------------------------
-# TEST
-# We are creating a secrets with a single secret while specifying only the minimum required variables
-# ---------------------------------------------------------------------------------------------------------------------
 
 module "main" {
   source = "../.."
