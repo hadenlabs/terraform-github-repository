@@ -43,7 +43,7 @@ repos:
     hooks:
       - id: black
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.9.0
+    rev: 3.9.1
     hooks:
       - id: flake8
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -89,7 +89,7 @@ repos:
         additional_dependencies:
           - black
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: dbe849b0adf6fd77b8faee74cd02b8efcd7871dd
+    rev: c2b6aefa5f710fc1289b549ba81f1f83eb8cc137
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
