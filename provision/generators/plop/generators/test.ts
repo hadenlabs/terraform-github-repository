@@ -32,42 +32,42 @@ export const testGenerator: PlopGeneratorConfig = {
     const actions: Actions = []
 
     actions.push({
-      type: "add",
+      type: 'add',
       templateFile: `${baseTemplatesPath}/test.append.hbs`,
       path: `${testPath}/repository_${slugify(answers.testName, '_')}_test.go`,
       abortOnFail: true,
     })
 
     actions.push({
-      type: "add",
+      type: 'add',
       templateFile: `${baseTemplatesPath}/test/main.append.hbs`,
       path: `${containerPath}/main.tf`,
       abortOnFail: false,
     })
 
     actions.push({
-      type: "add",
+      type: 'add',
       templateFile: `${baseTemplatesPath}/test/outputs.append.hbs`,
       path: `${containerPath}/outputs.tf`,
       abortOnFail: true,
     })
 
     actions.push({
-      type: "add",
+      type: 'add',
       templateFile: `${baseTemplatesPath}/test/provider.append.hbs`,
       path: `${containerPath}/provider.tf`,
       abortOnFail: true,
     })
 
     actions.push({
-      type: "add",
+      type: 'add',
       templateFile: `${baseTemplatesPath}/test/variables.append.hbs`,
       path: `${containerPath}/variables.tf`,
       abortOnFail: true,
     })
 
     actions.push({
-      type: "add",
+      type: 'add',
       templateFile: `${baseTemplatesPath}/test/versions.append.hbs`,
       path: `${containerPath}/versions.tf`,
       abortOnFail: true,
