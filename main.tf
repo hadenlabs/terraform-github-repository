@@ -33,7 +33,7 @@ locals {
 
   outputs = {
     settings = merge(local.defaults.settings, local.input.settings)
-    topics   = flatten(concat(local.generated_topics, local.input.topics))
+    topics   = distinct(flatten(concat(local.generated_topics, local.input.topics)))
   }
 
   default_pages = {
