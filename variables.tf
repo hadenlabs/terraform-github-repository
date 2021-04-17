@@ -104,3 +104,9 @@ variable "files" {
   description = "list files for repository"
   default     = []
 }
+
+variable "types" {
+  type        = list(string)
+  description = "types of project."
+  default     = []
+}
