@@ -216,3 +216,22 @@
   }
 
 ```
+
+### implement with topics and types
+
+```hcl
+
+  module "repository_file" {
+    providers = {
+      github = github
+    }
+    source      = "hadenlabs/repository/github"
+    version     = "0.9.0"
+    name        = "repository-example"
+    description = "repository example"
+    visibility  = "public"
+    types  = ["django"]
+    topics  = ["go"]
+  }
+
+```
