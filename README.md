@@ -274,6 +274,25 @@ Full working examples can be found in [examples](./examples) folder.
 
 ```
 
+### implement with topics and types
+
+```hcl
+
+  module "repository_file" {
+    providers = {
+      github = github
+    }
+    source      = "hadenlabs/repository/github"
+    version     = "0.9.0"
+    name        = "repository-example"
+    description = "repository example"
+    visibility  = "public"
+    types  = ["django"]
+    topics  = ["go"]
+  }
+
+```
+
  <!-- BEGIN_TF_DOCS -->
 
 ## Requirements
@@ -335,6 +354,7 @@ No modules.
 | <a name="input_deploy_keys"></a> [deploy_keys](#input_deploy_keys) | The name of repositories. | <pre>list(object({<br> title = string<br> key = string<br> read_only = bool<br> }))</pre> | `[]` | no |
 | <a name="input_collaborators"></a> [collaborators](#input_collaborators) | List of Collaborator Objects | <pre>list(object({<br> username = string<br> permission = string<br> }))</pre> | `[]` | no |
 | <a name="input_topics"></a> [topics](#input_topics) | topics of project. | `list(string)` | `[]` | no |
+| <a name="input_types"></a> [types](#input_types) | types of project. | `list(string)` | `[]` | no |
 | <a name="input_pages"></a> [pages](#input_pages) | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
 | <a name="input_secrets"></a> [secrets](#input_secrets) | secrets for repository | `map(any)` | `{}` | no |
 | <a name="input_settings"></a> [settings](#input_settings) | Create and manage settings. | `map(any)` | `{}` | no |
@@ -353,6 +373,7 @@ No modules.
 | <a name="output_instance"></a> [instance](#output_instance) | output instance repository |
 | <a name="output_name"></a> [name](#output_name) | output name repository |
 | <a name="output_secrets"></a> [secrets](#output_secrets) | output instance github actions secrets |
+| <a name="output_topics"></a> [topics](#output_topics) | output topics github repository |
 
 <!-- END_TF_DOCS -->
 
@@ -405,7 +426,7 @@ All other trademarks referenced herein are the property of their respective owne
 
 ## License
 
-The code and styles are licensed under the LGPLV3 license [See project license.](LICENSE).
+The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
 
 ## Don't forget to 🌟 Star 🌟 the repo if you like terraform-github-repository
 
