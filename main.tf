@@ -1,23 +1,41 @@
 locals {
-  default_settings = {
-    auto_init              = false
-    has_issues             = true
-    has_wiki               = true
-    has_projects           = true
-    homepage_url           = ""
-    is_template            = false
-    allow_merge_commit     = true
-    allow_squash_merge     = true
-    allow_rebase_merge     = true
-    delete_branch_on_merge = false
-    gitignore_template     = ""
-    license_template       = ""
-    archived               = false
-    archive_on_destroy     = false
-    vulnerability_alerts   = true
+
+  defaults = {
+    topics = yamldecode(file("${path.module}/data/topics.yaml"))
+    settings = {
+      auto_init              = false
+      has_issues             = true
+      has_wiki               = true
+      has_projects           = true
+      homepage_url           = ""
+      is_template            = false
+      allow_merge_commit     = true
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      delete_branch_on_merge = false
+      gitignore_template     = ""
+      license_template       = ""
+      archived               = false
+      archive_on_destroy     = false
+      vulnerability_alerts   = true
+    }
   }
 
-  settings = merge(local.default_settings, try(var.settings, {}))
+  input = {
+    settings = try(var.settings, {})
+    types    = try(var.types, [])
+    topics   = try(var.topics, [])
+  }
+
+  generated_topics = flatten([
+    for k in local.input.types : tolist(lookup(local.defaults.topics, k))
+  ])
+
+  outputs = {
+    settings = merge(local.defaults.settings, local.input.settings)
+    topics   = flatten(concat(local.generated_topics, local.input.topics))
+  }
+
   default_pages = {
     branch = var.default_branch
     path   = "/"
@@ -32,21 +50,21 @@ resource "github_repository" "this" {
   #checkov:skip=CKV_GIT_1:The resource github is module
   visibility = var.visibility
 
-  homepage_url           = local.settings.homepage_url
-  has_issues             = local.settings.has_issues
-  has_projects           = local.settings.has_projects
-  has_wiki               = local.settings.has_wiki
-  is_template            = local.settings.is_template
-  allow_merge_commit     = local.settings.allow_merge_commit
-  allow_squash_merge     = local.settings.allow_squash_merge
-  allow_rebase_merge     = local.settings.allow_rebase_merge
-  delete_branch_on_merge = local.settings.delete_branch_on_merge
-  auto_init              = local.settings.auto_init
-  gitignore_template     = local.settings.gitignore_template
-  license_template       = local.settings.license_template
-  archived               = local.settings.archived
-  archive_on_destroy     = local.settings.archive_on_destroy
-  vulnerability_alerts   = local.settings.vulnerability_alerts
+  homepage_url           = local.outputs.settings.homepage_url
+  has_issues             = local.outputs.settings.has_issues
+  has_projects           = local.outputs.settings.has_projects
+  has_wiki               = local.outputs.settings.has_wiki
+  is_template            = local.outputs.settings.is_template
+  allow_merge_commit     = local.outputs.settings.allow_merge_commit
+  allow_squash_merge     = local.outputs.settings.allow_squash_merge
+  allow_rebase_merge     = local.outputs.settings.allow_rebase_merge
+  delete_branch_on_merge = local.outputs.settings.delete_branch_on_merge
+  auto_init              = local.outputs.settings.auto_init
+  gitignore_template     = local.outputs.settings.gitignore_template
+  license_template       = local.outputs.settings.license_template
+  archived               = local.outputs.settings.archived
+  archive_on_destroy     = local.outputs.settings.archive_on_destroy
+  vulnerability_alerts   = local.outputs.settings.vulnerability_alerts
 
   topics = var.topics
 
@@ -129,7 +147,7 @@ resource "github_repository_file" "this" {
 
 resource "github_repository_project" "this" {
   depends_on = [github_repository.this]
-  count      = local.settings.has_projects ? 1 : 0
+  count      = local.outputs.settings.has_projects ? 1 : 0
   name       = lower(var.name)
   repository = github_repository.this.name
   body       = var.description
