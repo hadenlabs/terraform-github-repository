@@ -58,6 +58,7 @@ No modules.
 | <a name="input_deploy_keys"></a> [deploy\_keys](#input\_deploy\_keys) | The name of repositories. | <pre>list(object({<br>    title     = string<br>    key       = string<br>    read_only = bool<br>  }))</pre> | `[]` | no |
 | <a name="input_collaborators"></a> [collaborators](#input\_collaborators) | List of Collaborator Objects | <pre>list(object({<br>    username   = string<br>    permission = string<br>  }))</pre> | `[]` | no |
 | <a name="input_topics"></a> [topics](#input\_topics) | topics of project. | `list(string)` | `[]` | no |
+| <a name="input_types"></a> [types](#input\_types) | types of project. | `list(string)` | `[]` | no |
 | <a name="input_pages"></a> [pages](#input\_pages) | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
 | <a name="input_secrets"></a> [secrets](#input\_secrets) | secrets for repository | `map(any)` | `{}` | no |
 | <a name="input_settings"></a> [settings](#input\_settings) | Create and manage settings. | `map(any)` | `{}` | no |
@@ -76,4 +77,5 @@ No modules.
 | <a name="output_instance"></a> [instance](#output\_instance) | output instance repository |
 | <a name="output_name"></a> [name](#output\_name) | output name repository |
 | <a name="output_secrets"></a> [secrets](#output\_secrets) | output instance github actions secrets |
+| <a name="output_topics"></a> [topics](#output\_topics) | output topics github repository |
 <!-- END_TF_DOCS -->
