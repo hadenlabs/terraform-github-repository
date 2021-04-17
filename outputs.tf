@@ -22,3 +22,8 @@ output "files" {
   description = "output instance github files"
   value       = github_repository_file.this
 }
+
+output "topics" {
+  description = "output topics github repository"
+  value       = local.outputs.topics
+}
