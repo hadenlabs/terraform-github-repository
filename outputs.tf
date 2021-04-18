@@ -27,3 +27,8 @@ output "topics" {
   description = "output topics github repository"
   value       = local.outputs.topics
 }
+
+output "labels" {
+  description = "output topics github repository"
+  value       = local.outputs.labels
+}
