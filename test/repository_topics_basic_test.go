@@ -17,7 +17,7 @@ func TestTopicsBasicSuccess(t *testing.T) {
 	topics := []string{"python"}
 
 	terraformOptions := &terraform.Options{
-		//The path to where your Terraform code is located
+		// The path to where your Terraform code is located
 		TerraformDir: "repository-topics-basic",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
