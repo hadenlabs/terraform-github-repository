@@ -2,6 +2,7 @@ locals {
 
   defaults = {
     topics = yamldecode(file("${path.module}/data/topics.yaml"))
+    labels = yamldecode(file("${path.module}/data/labels.yaml"))
     settings = {
       auto_init              = false
       has_issues             = true
@@ -22,18 +23,23 @@ locals {
   }
 
   input = {
-    settings = try(var.settings, {})
-    types    = try(var.types, [])
-    topics   = try(var.topics, [])
+    settings           = try(var.settings, {})
+    types              = try(var.types, [])
+    topics             = try(var.topics, [])
+    add_labels_default = try(var.add_labels_default, false)
   }
 
   generated_topics = flatten([
     for k in local.input.types : tolist(lookup(local.defaults.topics, k))
   ])
 
+  generated_labels = tolist(lookup(local.defaults.labels, "labels"))
+
   outputs = {
-    settings = merge(local.defaults.settings, local.input.settings)
-    topics   = distinct(flatten(concat(local.generated_topics, local.input.topics)))
+    add_labels_default = local.input.add_labels_default
+    settings           = merge(local.defaults.settings, local.input.settings)
+    topics             = distinct(flatten(concat(local.generated_topics, local.input.topics)))
+    labels             = local.generated_labels
   }
 
   default_pages = {
@@ -181,135 +187,11 @@ resource "github_repository_collaborator" "this" {
   permission_diff_suppression = lookup(var.collaborators[count.index], "permission_diff_suppression", false)
 }
 
-resource "github_issue_label" "kind_bug" {
+resource "github_issue_label" "this" {
+  depends_on  = [github_repository.this]
+  count       = local.outputs.add_labels_default ? length(local.outputs.labels) : 0
   repository  = github_repository.this.name
-  name        = "kind/bug"
-  description = "Categorizes issue or PR as related to a bug."
-  color       = "FF0040"
-}
-
-resource "github_issue_label" "kind_discussion" {
-  repository  = github_repository.this.name
-  name        = "kind/discussion"
-  description = "Categorizes issue or PR as related to a discussion."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "kind_documentation" {
-  repository  = github_repository.this.name
-  name        = "kind/docs"
-  description = "Categorizes issue or PR as related to documentation."
-  color       = "5319e7"
-}
-
-resource "github_issue_label" "kind_feature" {
-  repository  = github_repository.this.name
-  name        = "kind/feature"
-  description = "Categorizes issue or PR as related to a new feature."
-  color       = "1d76db"
-}
-
-resource "github_issue_label" "kind_refactor" {
-  repository  = github_repository.this.name
-  name        = "kind/refactor"
-  description = "Categorizes issue or PR as related to a new refactor."
-  color       = "1d76db"
-}
-
-resource "github_issue_label" "kind_perf" {
-  repository  = github_repository.this.name
-  name        = "kind/perf"
-  description = "Categorizes issue or PR as related to a new performance."
-  color       = "1d76db"
-}
-
-resource "github_issue_label" "kind_chore" {
-  repository  = github_repository.this.name
-  name        = "kind/chore"
-  description = "Categorizes issue or PR as related to a new chore."
-  color       = "1d76db"
-}
-
-resource "github_issue_label" "kind_question" {
-  repository  = github_repository.this.name
-  name        = "kind/question"
-  description = "Categorizes issue or PR as related to a question."
-  color       = "cc317c"
-}
-
-resource "github_issue_label" "priority_critical" {
-  repository  = github_repository.this.name
-  name        = "priority/critical"
-  description = "Highest priority. This should be dealt with ASAP."
-  color       = "ee0701"
-}
-
-resource "github_issue_label" "priority_high" {
-  repository  = github_repository.this.name
-  name        = "priority/high"
-  description = "After critical issues are fixed, these should be dealt with before any further issues."
-  color       = "d93f0b"
-}
-
-resource "github_issue_label" "priority_medium" {
-  repository  = github_repository.this.name
-  name        = "priority/medium"
-  description = "This issue or PR may be useful, and needs some attention."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "priority_low" {
-  repository  = github_repository.this.name
-  name        = "priority/low"
-  description = "This issue can probably be picked up by anyone looking to contribute to the project."
-  color       = "0e8a16"
-}
-
-resource "github_issue_label" "status_backlog" {
-  repository  = github_repository.this.name
-  name        = "status/backlog"
-  description = "Status Backlog."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "status_ready" {
-  repository  = github_repository.this.name
-  name        = "status/todo"
-  description = "Status Ready (to do)."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "status_in_progress" {
-  repository  = github_repository.this.name
-  name        = "status/in_progress"
-  description = "This issue or PR is being worked on, and has someone assigned."
-  color       = "cccccc"
-}
-
-resource "github_issue_label" "status_review" {
-  repository  = github_repository.this.name
-  name        = "status/review"
-  description = "Status Review."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "status_approved" {
-  repository  = github_repository.this.name
-  name        = "status/approved"
-  description = "status approved."
-  color       = "c2e0c6"
-}
-
-resource "github_issue_label" "status_done" {
-  repository  = github_repository.this.name
-  name        = "Done"
-  description = "Status Done."
-  color       = "fbca04"
-}
-
-resource "github_issue_label" "status_blocked" {
-  repository  = github_repository.this.name
-  name        = "status/blocked"
-  description = "There is another issue or PR not is possible resolved."
-  color       = "ee0701"
+  name        = lookup(local.outputs.labels[count.index], "name")
+  description = lookup(local.outputs.labels[count.index], "description")
+  color       = lookup(local.outputs.labels[count.index], "color")
 }
