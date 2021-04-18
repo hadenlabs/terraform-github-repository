@@ -293,6 +293,24 @@ Full working examples can be found in [examples](./examples) folder.
 
 ```
 
+### not implement labels default
+
+```hcl
+
+  module "repository_file" {
+    providers = {
+      github = github
+    }
+    source      = "hadenlabs/repository/github"
+    version     = "0.9.0"
+    name        = "repository-example"
+    description = "repository example"
+    visibility  = "public"
+    add_labels_default = false
+  }
+
+```
+
  <!-- BEGIN_TF_DOCS -->
 
 ## Requirements
@@ -320,25 +338,7 @@ No modules.
 | [github_actions_secret.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
 | [github_branch.develop](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch_default.develop_default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
-| [github_issue_label.kind_bug](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.kind_chore](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.kind_discussion](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.kind_documentation](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.kind_feature](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.kind_perf](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.kind_question](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.kind_refactor](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.priority_critical](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.priority_high](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.priority_low](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.priority_medium](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.status_approved](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.status_backlog](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.status_blocked](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.status_done](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.status_in_progress](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.status_ready](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
-| [github_issue_label.status_review](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
+| [github_issue_label.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 | [github_repository_collaborator.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_collaborator) | resource |
 | [github_repository_deploy_key.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_deploy_key) | resource |
@@ -349,6 +349,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | :-: |
+| <a name="input_add_labels_default"></a> [add_labels_default](#input_add_labels_default) | add labels default | `bool` | `true` | no |
 | <a name="input_is_git_flow"></a> [is_git_flow](#input_is_git_flow) | Git Flow - Github Flow | `bool` | `false` | no |
 | <a name="input_files"></a> [files](#input_files) | list files for repository | <pre>list(object({<br> branch = string<br> file = string<br> content = string<br> commit_message = string<br> commit_author = string<br> commit_email = string<br> overwrite_on_create = bool<br> }))</pre> | `[]` | no |
 | <a name="input_deploy_keys"></a> [deploy_keys](#input_deploy_keys) | The name of repositories. | <pre>list(object({<br> title = string<br> key = string<br> read_only = bool<br> }))</pre> | `[]` | no |
@@ -371,6 +372,7 @@ No modules.
 | <a name="output_deploy_key"></a> [deploy_key](#output_deploy_key) | output instance deploy_key |
 | <a name="output_files"></a> [files](#output_files) | output instance github files |
 | <a name="output_instance"></a> [instance](#output_instance) | output instance repository |
+| <a name="output_labels"></a> [labels](#output_labels) | output topics github repository |
 | <a name="output_name"></a> [name](#output_name) | output name repository |
 | <a name="output_secrets"></a> [secrets](#output_secrets) | output instance github actions secrets |
 | <a name="output_topics"></a> [topics](#output_topics) | output topics github repository |
