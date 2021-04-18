@@ -12,18 +12,18 @@ func TestAddLabelsDefaultSuccess(t *testing.T) {
 
 	name := "repository-test"
 	visibility := "public"
-  description := "description"
-	add_labels_default := true
+	description := "description"
+	addLabelsDefault := true
 
 	terraformOptions := &terraform.Options{
-		//The path to where your Terraform code is located
+		// The path to where your Terraform code is located
 		TerraformDir: "repository-add-labels-default",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
 			"name":               name,
 			"visibility":         visibility,
-			"add_labels_default": add_labels_default,
-      "description": description,
+			"add_labels_default": addLabelsDefault,
+			"description":        description,
 		},
 	}
 
