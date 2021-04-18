@@ -110,3 +110,9 @@ variable "types" {
   description = "types of project."
   default     = []
 }
+
+variable "add_labels_default" {
+  type        = bool
+  description = "add labels default"
+  default     = true
+}
