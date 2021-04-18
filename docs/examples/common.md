@@ -235,3 +235,21 @@
   }
 
 ```
+
+### not implement labels default
+
+```hcl
+
+  module "repository_file" {
+    providers = {
+      github = github
+    }
+    source      = "hadenlabs/repository/github"
+    version     = "0.9.0"
+    name        = "repository-example"
+    description = "repository example"
+    visibility  = "public"
+    add_labels_default = false
+  }
+
+```
