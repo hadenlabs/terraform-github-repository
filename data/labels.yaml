@@ -28,16 +28,14 @@ labels:
     color: 'ee0701'
   - name: 'priority/high'
     description: |-
-      After critical issues are fixed, these should be dealt with before any
-      further issues.
+      'After critical issues are fixed, these should be dealt with before any further issues.'
     color: 'd93f0b'
   - name: 'priority/medium'
     description: 'This issue or PR may be useful, and needs some attention.'
     color: 'fbca04'
   - name: 'priority/low'
     description: |-
-      This issue can probably be picked up by anyone looking to contribute to
-      the project.
+      This issue can probably be picked up by anyone looking to contribute to the project.
     color: '0e8a16'
   - name: 'status/backlog'
     description: 'Status Backlog.'
@@ -58,5 +56,5 @@ labels:
     description: 'Status Done.'
     color: 'fbca04'
   - name: 'status/blocked'
-    escription: 'There is another issue or PR not is possible resolved.'
+    description: 'There is another issue or PR not is possible resolved.'
     color: 'ee0701'
