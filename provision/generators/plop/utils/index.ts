@@ -4,6 +4,6 @@ import {
   pathExists,
   pathMake,
   baseTemplatesPath,
-  cleanString,
+  cleanString
 } from './helpers'
 export { hyphenate, baseGeneratorPath, pathExists, pathMake, baseTemplatesPath, cleanString }
