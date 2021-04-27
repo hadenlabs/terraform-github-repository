@@ -24,7 +24,7 @@ repos:
     hooks:
       - id: python-safety-dependencies-check
   - repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
-    rev: v1.0.4
+    rev: v1.0.5
     hooks:
       - id: python-bandit-vulnerability-check
         args: []
@@ -89,7 +89,7 @@ repos:
         additional_dependencies:
           - black
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: c2b6aefa5f710fc1289b549ba81f1f83eb8cc137
+    rev: ab7a684f0ab65a90038ea540eaa2afbed1b246be
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
@@ -128,6 +128,7 @@ repos:
           - --path=.
           - --repo-config-path=.github/linters/.gitleaks.toml
           - --verbose
+
   - repo: local
     hooks:
       - id: prettier
@@ -136,19 +137,21 @@ repos:
         entry: ./node_modules/prettier/bin-prettier.js
         args:
           - '--write=true'
-          - '--list-different'
           - '--config=.github/linters/prettier.config.js'
           - '--ignore-path=.github/linters/.prettierignore'
         files: \.(js|jsx|json|ts|tsx|mjs|d.ts|md|yml|yaml|gql|graphql|mjml)$
         exclude: node_modules
       - id: eslint
         name: eslint
-        language: system
-        pass_filenames: true
-        entry: node_modules/eslint/bin/eslint.js --config=.github/linters/.eslintrc.js --ignore-path=.github/linters/.eslintignore --color
+        language: node
+        entry: node_modules/eslint/bin/eslint.js
         args:
           - '--fix'
+          - '--color'
+          - '--config=.github/linters/.eslintrc.js'
+          - '--ignore-path=.github/linters/.eslintignore'
         files: \.(js|jsx|ts|tsx|mjs|d.ts)$
+        exclude: node_modules
       - id: stylint
         name: stylint
         language: system
