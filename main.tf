@@ -112,9 +112,8 @@ resource "github_repository" "this" {
 }
 
 resource "github_branch" "develop" {
+  count      = var.is_git_flow ? 1 : 0
   depends_on = [github_repository.this]
-  count = var.is_git_flow ? 1 : 0
-
   repository = github_repository.this.name
   branch     = "develop"
 
@@ -122,21 +121,20 @@ resource "github_branch" "develop" {
     create_before_destroy = true
     ignore_changes = [
       branch,
-      source_branch
+      source_branch,
     ]
   }
 }
 
 resource "github_branch_default" "develop_default" {
   count = var.is_git_flow ? 1 : 0
-
-  repository = github_repository.this.name
-  branch     = "develop"
-
   depends_on = [
     github_branch.develop,
     github_repository.this
   ]
+
+  repository = github_repository.this.name
+  branch     = "develop"
 
   lifecycle {
     create_before_destroy = true
