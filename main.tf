@@ -19,6 +19,7 @@ locals {
       archived               = false
       archive_on_destroy     = false
       vulnerability_alerts   = true
+      template               = {}
     }
   }
 
@@ -87,7 +88,7 @@ resource "github_repository" "this" {
   }
 
   dynamic "template" {
-    for_each = length(var.template) != 0 ? [var.template] : []
+    for_each = length(local.outputs.settings.template) != 0 ? [local.outputs.settings.template] : []
 
     content {
       owner      = lookup(template.value, "owner", null)
