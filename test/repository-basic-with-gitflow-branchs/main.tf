@@ -4,7 +4,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 module "main" {
-  source = "../.."
+  source      = "../.."
   name        = var.name
   description = var.description
   visibility  = var.visibility
