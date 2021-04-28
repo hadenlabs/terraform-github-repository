@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.10.0"></a>
+
+## [0.10.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.9.0...0.10.0)
+
+> 2021-04-27
+
+### Bug Fixes
+
+- validation branch generated with gitflow ([#69](https://github.com/hadenlabs/terraform-github-repository/issues/69))
+- error comment with golangci lint ([#65](https://github.com/hadenlabs/terraform-github-repository/issues/65))
+
+### Code Refactoring
+
+- templates to var settings ([#67](https://github.com/hadenlabs/terraform-github-repository/issues/67))
+- github actions configuration ([#67](https://github.com/hadenlabs/terraform-github-repository/issues/67))
+- lints code pre-commit ([#67](https://github.com/hadenlabs/terraform-github-repository/issues/67))
+- generator test ([#65](https://github.com/hadenlabs/terraform-github-repository/issues/65))
+- labels toml to yaml ([#65](https://github.com/hadenlabs/terraform-github-repository/issues/65))
+- code generators terraform ([#63](https://github.com/hadenlabs/terraform-github-repository/issues/63))
+
+### Features
+
+- implement template test with settings ([#69](https://github.com/hadenlabs/terraform-github-repository/issues/69))
+- implement badges of how to code project ([#67](https://github.com/hadenlabs/terraform-github-repository/issues/67))
+- implement test add labels default terraform ([#65](https://github.com/hadenlabs/terraform-github-repository/issues/65))
+- implement add labels default ([#65](https://github.com/hadenlabs/terraform-github-repository/issues/65))
+- implement data for labels ([#65](https://github.com/hadenlabs/terraform-github-repository/issues/65))
+- implement output topics ([#63](https://github.com/hadenlabs/terraform-github-repository/issues/63))
+- implement topics data ([#63](https://github.com/hadenlabs/terraform-github-repository/issues/63))
+- implement generator and templates plop ([#63](https://github.com/hadenlabs/terraform-github-repository/issues/63))
+- implement license lgpl 3.0 ([#63](https://github.com/hadenlabs/terraform-github-repository/issues/63))
+- implement hooks git ([#63](https://github.com/hadenlabs/terraform-github-repository/issues/63))
+- implement plop dependences ([#63](https://github.com/hadenlabs/terraform-github-repository/issues/63))
+- implement settings project ([#1](https://github.com/hadenlabs/terraform-github-repository/issues/1))
+- implement settings project ([#1](https://github.com/hadenlabs/terraform-github-repository/issues/1))
+- implement settings project ([#1](https://github.com/hadenlabs/terraform-github-repository/issues/1))
+- implement license lgpl 3 ([#52](https://github.com/hadenlabs/terraform-github-repository/issues/52))
+
 <a name="0.9.0"></a>
 
 ## [0.9.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.8.0...0.9.0)
