@@ -112,12 +112,19 @@ resource "github_repository" "this" {
 }
 
 resource "github_branch" "develop" {
+  depends_on = [github_repository.this]
   count = var.is_git_flow ? 1 : 0
 
   repository = github_repository.this.name
   branch     = "develop"
 
-  depends_on = [github_repository.this]
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      branch,
+      source_branch
+    ]
+  }
 }
 
 resource "github_branch_default" "develop_default" {
@@ -130,6 +137,14 @@ resource "github_branch_default" "develop_default" {
     github_branch.develop,
     github_repository.this
   ]
+
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      branch,
+    ]
+  }
+
 }
 
 resource "github_repository_file" "this" {
