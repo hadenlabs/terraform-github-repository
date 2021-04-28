@@ -10,18 +10,23 @@ import (
 func Test{{pascalCase testName}}Success(t *testing.T) {
   t.Parallel()
 
-  visibility := "public"
-  repository := "test-repository"
   description := "description"
+  repository := "test-repository"
+  visibility := "public"
+  settings := map[string]interface{}{
+		"auto_init": true,
+	}
+
 
   terraformOptions := &terraform.Options{
       // The path to where your Terraform code is located
       TerraformDir: "repository-{{dashCase testName}}",
       Upgrade:      true,
       Vars: map[string]interface{}{
-        "visibility":  visibility,
-        "name":        repository,
         "description": description,
+        "name":        repository,
+        "settings":    settings,
+        "visibility":  visibility,
       },
   }
 
