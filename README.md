@@ -14,7 +14,7 @@
 
 # terraform-github-repository
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/terraform-github-repository.svg?label=latest&sort=semver)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Lint](https://github.com/hadenlabs/terraform-github-repository/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/hadenlabs/terraform-github-repository/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/terraform-github-repository.svg)](https://github.com/hadenlabs/terraform-github-repository/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-repository.svg)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/terraform-github-repository/readme)](https://github.com/hadenlabs/terraform-github-repository)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/terraform-github-repository?label=latest&sort=semver)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code)](https://github.com/hadenlabs/terraform-github-repository/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/terraform-github-repository/readme)](https://github.com/hadenlabs/terraform-github-repository)
 
 Terraform module to provision an github repository.
 
@@ -349,6 +349,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | :-: |
+| <a name="input_settings"></a> [settings](#input_settings) | Create and manage settings. | `any` | `{}` | no |
 | <a name="input_add_labels_default"></a> [add_labels_default](#input_add_labels_default) | add labels default | `bool` | `true` | no |
 | <a name="input_is_git_flow"></a> [is_git_flow](#input_is_git_flow) | Git Flow - Github Flow | `bool` | `false` | no |
 | <a name="input_files"></a> [files](#input_files) | list files for repository | <pre>list(object({<br> branch = string<br> file = string<br> content = string<br> commit_message = string<br> commit_author = string<br> commit_email = string<br> overwrite_on_create = bool<br> }))</pre> | `[]` | no |
@@ -358,8 +359,6 @@ No modules.
 | <a name="input_types"></a> [types](#input_types) | types of project. | `list(string)` | `[]` | no |
 | <a name="input_pages"></a> [pages](#input_pages) | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
 | <a name="input_secrets"></a> [secrets](#input_secrets) | secrets for repository | `map(any)` | `{}` | no |
-| <a name="input_settings"></a> [settings](#input_settings) | Create and manage settings. | `map(any)` | `{}` | no |
-| <a name="input_template"></a> [template](#input_template) | Template Repository to use when creating the Repository | `map(string)` | `{}` | no |
 | <a name="input_default_branch"></a> [default_branch](#input_default_branch) | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
 | <a name="input_description"></a> [description](#input_description) | The description of the repository. | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input_name) | The name of the repository. | `string` | n/a | yes |
@@ -367,15 +366,15 @@ No modules.
 
 ## Outputs
 
-| Name | Description |
-| --- | --- |
-| <a name="output_deploy_key"></a> [deploy_key](#output_deploy_key) | output instance deploy_key |
-| <a name="output_files"></a> [files](#output_files) | output instance github files |
-| <a name="output_instance"></a> [instance](#output_instance) | output instance repository |
-| <a name="output_labels"></a> [labels](#output_labels) | output topics github repository |
-| <a name="output_name"></a> [name](#output_name) | output name repository |
-| <a name="output_secrets"></a> [secrets](#output_secrets) | output instance github actions secrets |
-| <a name="output_topics"></a> [topics](#output_topics) | output topics github repository |
+| Name                                                              | Description                            |
+| ----------------------------------------------------------------- | -------------------------------------- |
+| <a name="output_deploy_key"></a> [deploy_key](#output_deploy_key) | output instance deploy_key             |
+| <a name="output_files"></a> [files](#output_files)                | output instance github files           |
+| <a name="output_instance"></a> [instance](#output_instance)       | output instance repository             |
+| <a name="output_labels"></a> [labels](#output_labels)             | output topics github repository        |
+| <a name="output_name"></a> [name](#output_name)                   | output name repository                 |
+| <a name="output_secrets"></a> [secrets](#output_secrets)          | output instance github actions secrets |
+| <a name="output_topics"></a> [topics](#output_topics)             | output topics github repository        |
 
 <!-- END_TF_DOCS -->
 
