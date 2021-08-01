@@ -25,7 +25,7 @@ AWS_VAULT ?= ${TEAM}
 PROJECT:=terraform-github-repository
 
 PYTHON_VERSION=3.8.0
-NODE_VERSION=14.15.5
+NODE_VERSION=14.16.1
 PYENV_NAME="${PROJECT}"
 GIT_IGNORES:=python,node,go,terraform
 GIT_IGNORES_CUSTOM:= bin \
