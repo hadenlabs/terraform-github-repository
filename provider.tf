@@ -1,2 +1,0 @@
-provider "github" {}
-provider "local" {}
