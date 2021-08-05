@@ -12,9 +12,9 @@
 
   -->
 
-# terraform-github-repository
+[![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code)](https://github.com/hadenlabs/terraform-github-repository/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/terraform-github-repository/readme)](https://github.com/hadenlabs/terraform-github-repository)
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/terraform-github-repository?label=latest&sort=semver)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code)](https://github.com/hadenlabs/terraform-github-repository/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/terraform-github-repository/readme)](https://github.com/hadenlabs/terraform-github-repository)
+# terraform-github-repository
 
 Terraform module to provision an github repository.
 
@@ -327,7 +327,7 @@ Full working examples can be found in [examples](./examples) folder.
     settings    = {
       template = {
         owner = "hadenlabs"
-        repository = "base-template"
+        repository = "terraform-github-repository"
       }
     }
 
