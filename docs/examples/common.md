@@ -270,7 +270,7 @@
     settings    = {
       template = {
         owner = "hadenlabs"
-        repository = "base-template"
+        repository = "terraform-github-repository"
       }
     }
 
