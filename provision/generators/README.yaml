@@ -30,18 +30,15 @@ github_repo: hadenlabs/terraform-github-repository
 
 # Badges to display
 badges:
-  - name: GitHub tag (latest SemVer)
-    image: https://img.shields.io/github/v/tag/hadenlabs/terraform-github-repository?label=latest&sort=semver
-    url: https://github.com/hadenlabs/terraform-github-repository/releases
-  - name: Lint
-    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code
-    url: https://github.com/hadenlabs/terraform-github-repository/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/hadenlabs/terraform-github-repository
-    url: https://github.com/hadenlabs/terraform-github-repository/issues
   - name: Latest Release
     image: https://img.shields.io/github/release/hadenlabs/terraform-github-repository
     url: https://github.com/hadenlabs/terraform-github-repository/releases
+  - name: Lint
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code
+    url: https://github.com/hadenlabs/terraform-github-repository/actions?workflow=lint-code
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
