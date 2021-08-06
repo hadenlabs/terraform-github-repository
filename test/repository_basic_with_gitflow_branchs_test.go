@@ -5,15 +5,17 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
 )
 
 func TestBasicWithGitflowBranchsSuccess(t *testing.T) {
 	t.Parallel()
 
-	visibility := "public"
-	repository := "test-repository"
-	description := "description"
-  isGitFlow := true
+	repository := faker.Repository().Name()
+	description := faker.Repository().Description()
+	visibility := faker.Repository().Visibility()
+	isGitFlow := true
 	settings := map[string]interface{}{
 		"auto_init": true,
 	}
@@ -27,7 +29,7 @@ func TestBasicWithGitflowBranchsSuccess(t *testing.T) {
 			"name":        repository,
 			"settings":    settings,
 			"visibility":  visibility,
-      "is_git_flow": isGitFlow,
+			"is_git_flow": isGitFlow,
 		},
 	}
 
