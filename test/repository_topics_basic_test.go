@@ -5,14 +5,16 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
 )
 
 func TestTopicsBasicSuccess(t *testing.T) {
 	t.Parallel()
 
-	visibility := "public"
-	repository := "test-repository"
-	description := "description"
+	description := faker.Repository().Description()
+	repository := faker.Repository().Name()
+	visibility := faker.Repository().Visibility()
 	types := []string{"flask"}
 	topics := []string{"python"}
 
