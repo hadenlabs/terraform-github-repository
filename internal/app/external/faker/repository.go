@@ -1,15 +1,16 @@
 package faker
 
 import (
-	"math/rand"
-	"time"
+	"crypto/rand"
+	"math/big"
 
+	"github.com/hadenlabs/terraform-github-repository/internal/errors"
 )
 
 type FakeRepository interface {
-	Name() string // => "Name Repository"
-	Visibility() string // => "Visibility Repository"
-	Description() string // => "Visibility Repository"
+	Name() string        // => "Name Repository"
+	Visibility() string  // => "Visibility Repository"
+	Description() string // => "Description Repository"
 }
 
 type fakeRepository struct{}
@@ -19,22 +20,32 @@ func Repository() FakeRepository {
 }
 
 var (
-	names = []string{"test-repository", "other-repository"}
+	names        = []string{"test-repository", "other-repository"}
 	visibilities = []string{"public", "private"}
 	descriptions = []string{"description 1", "description 2"}
 )
 
 func (n fakeRepository) Name() string {
-	rand.Seed(time.Now().UnixNano())
-	return names[rand.Intn(len(names))]
+	num, err := rand.Int(rand.Reader, big.NewInt(int64(len(names))))
+	if err != nil {
+		panic(errors.New(errors.ErrorUnknown, err.Error()))
+	}
+	return names[num.Int64()]
 }
 
 func (n fakeRepository) Visibility() string {
-	rand.Seed(time.Now().UnixNano())
-	return visibilities[rand.Intn(len(visibilities))]
+	num, err := rand.Int(rand.Reader, big.NewInt(int64(len(visibilities))))
+	if err != nil {
+		panic(errors.New(errors.ErrorUnknown, err.Error()))
+	}
+
+	return visibilities[num.Int64()]
 }
 
 func (n fakeRepository) Description() string {
-	rand.Seed(time.Now().UnixNano())
-	return descriptions[rand.Intn(len(descriptions))]
+	num, err := rand.Int(rand.Reader, big.NewInt(int64(len(descriptions))))
+	if err != nil {
+		panic(errors.New(errors.ErrorUnknown, err.Error()))
+	}
+	return descriptions[num.Int64()]
 }
