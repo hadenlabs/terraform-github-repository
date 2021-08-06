@@ -10,9 +10,9 @@ provider "registry.terraform.io/hashicorp/local" {
 }
 
 provider "registry.terraform.io/integrations/github" {
-  version     = "4.6.0"
+  version     = "4.13.0"
   constraints = ">= 4.5.0"
   hashes = [
-    "h1:lmsWrVYAzyPhfeGdPwcs3Myrj2Xey+6UrXVhX0VZ/Fk=",
+    "h1:R873oiMWoTrzio/Dyhf/r8BwJ/KPc1FkYdRBu6ffrO4=",
   ]
 }
