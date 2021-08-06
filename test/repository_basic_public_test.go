@@ -6,23 +6,25 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
 )
 
 func TestRepositoryBasicPublicSuccess(t *testing.T) {
 	t.Parallel()
 
-	const VISIBILITY string = "public"
-	const REPOSITORY string = "test-repository"
-	const DESCRIPTION string = "description"
+	repository := faker.Repository().Name()
+	description := faker.Repository().Description()
+	visibility := "public"
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
 		TerraformDir: "repository-basic-public",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
-			"visibility":  VISIBILITY,
-			"name":        REPOSITORY,
-			"description": DESCRIPTION,
+			"name":        repository,
+			"visibility":  visibility,
+			"description": description,
 		},
 	}
 
@@ -35,6 +37,6 @@ func TestRepositoryBasicPublicSuccess(t *testing.T) {
 	outputRepositoryName := terraform.Output(t, terraformOptions, "repository_name")
 	outputRepository := terraform.OutputMapOfObjects(t, terraformOptions, "instance")
 	validateRepositoryName := strings.ReplaceAll(outputRepositoryName, "\"", "")
-	assert.Equal(t, REPOSITORY, validateRepositoryName)
+	assert.Equal(t, repository, validateRepositoryName)
 	assert.NotEmpty(t, outputRepository, outputRepository)
 }

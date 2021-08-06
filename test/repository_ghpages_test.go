@@ -5,14 +5,17 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
 )
 
 func TestGhpagesSuccess(t *testing.T) {
 	t.Parallel()
 
-	description := "description"
-	repository := "test-repository"
-	visibility := "public"
+	repository := faker.Repository().Name()
+	description := faker.Repository().Description()
+	visibility := faker.Repository().Visibility()
+
 	settings := map[string]interface{}{
 		"auto_init": true,
 	}
