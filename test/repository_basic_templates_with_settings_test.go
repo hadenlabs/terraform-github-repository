@@ -5,19 +5,21 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
 )
 
 func TestBasicTemplatesWithSettingsSuccess(t *testing.T) {
 	t.Parallel()
 
-	visibility := "public"
-	repository := "test-repository"
-	description := "description"
+	repository := faker.Repository().Name()
+	description := faker.Repository().Description()
+	visibility := faker.Repository().Visibility()
 	settings := map[string]interface{}{
 		"auto_init": true,
 		"template": map[string]string{
 			"owner":      "hadenlabs",
-			"repository": "base-template",
+			"repository": "terraform-github-repository",
 		},
 	}
 
