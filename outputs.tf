@@ -25,10 +25,10 @@ output "files" {
 
 output "topics" {
   description = "output topics github repository"
-  value       = local.outputs.topics
+  value       = local.output.topics
 }
 
 output "labels" {
   description = "output topics github repository"
-  value       = local.outputs.labels
+  value       = local.output.labels
 }
