@@ -41,18 +41,17 @@ locals {
 
   generated = {
     pages = try(local.input.pages, local.default.pages)
+    topics = flatten([
+      for k in local.input.types : tolist(lookup(local.default.topics, k))
+    ])
+    labels = tolist(lookup(local.default.labels, "labels"))
   }
-
-  generated_topics = flatten([
-    for k in local.input.types : tolist(lookup(local.default.topics, k))
-  ])
-  generated_labels = tolist(lookup(local.default.labels, "labels"))
 
   output = {
     add_labels_default = local.input.add_labels_default
     settings           = merge(local.default.settings, local.input.settings)
-    topics             = distinct(flatten(concat(local.generated_topics, local.input.topics)))
-    labels             = local.generated_labels
+    topics             = distinct(flatten(concat(local.generated.topics, local.input.topics)))
+    labels             = local.generated.labels
     pages              = local.generated.pages
   }
 
