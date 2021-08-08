@@ -60,7 +60,7 @@ usage: |-
 
     module "main_with_pages" {
       source = "hadenlabs/repository/github"
-      version = "0.10.0"
+      version = "0.11.0"
 
       providers = {
         github = github
