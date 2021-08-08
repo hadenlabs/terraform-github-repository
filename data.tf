@@ -119,6 +119,7 @@ locals {
       ]
 
     }
+
     labels = [
       {
         name        = "kind/bug"
