@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.11.0"></a>
+
+## [0.11.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.10.0...0.11.0)
+
+> 2021-08-08
+
+### Bug Fixes
+
+- implement validation make terraform ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- generated github pages branch ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- load data labels ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- links missing for documentation ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+
+### Code Refactoring
+
+- value default to data ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- organization to owner for github ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- load data topics and labels ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- test implement repository faker data ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- local name generated ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- local output generation ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- github actions configuration ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- generator readme ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- lints code gitleaks and golangci ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+
+### Features
+
+- implement faker values ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- implement local topics ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- implement structure work flow test ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- implement configuration project ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- implement code test faker repository ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- implement actions git flow ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- implement hooks prepare commit to pre-commit ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+
+### Features
+
+- ignore files lock hcl ([#77](https://github.com/hadenlabs/terraform-github-repository/issues/77))
+- implement faker repository ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+- clean unnecessary provider value ([#75](https://github.com/hadenlabs/terraform-github-repository/issues/75))
+
 <a name="0.10.0"></a>
 
 ## [0.10.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.9.0...0.10.0)
