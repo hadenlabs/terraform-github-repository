@@ -5,14 +5,16 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
 )
 
 func TestAddLabelsDefaultSuccess(t *testing.T) {
 	t.Parallel()
 
-	name := "repository-test"
+	name := faker.Repository().Name()
+	description := faker.Repository().Description()
 	visibility := "public"
-	description := "description"
 	addLabelsDefault := true
 
 	terraformOptions := &terraform.Options{
