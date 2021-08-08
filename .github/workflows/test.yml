@@ -19,6 +19,10 @@ on:
       - develop
       - main
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  GITHUB_OWNER: ${{ secrets.GH_OWNER }}
+
 jobs:
   test:
     name: test
@@ -36,5 +40,11 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go-version }}
+
+      - name: install terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.4
+
       - name: test
         run: go test ./...
