@@ -29,7 +29,8 @@ NODE_VERSION=14.16.1
 PYENV_NAME="${PROJECT}"
 GIT_IGNORES:=python,node,go,terraform
 GIT_IGNORES_CUSTOM:= bin \
-	bin
+	bin \
+	*.lock.hcl
 
 GI:=gi
 
