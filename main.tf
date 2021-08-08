@@ -44,7 +44,7 @@ locals {
     topics = flatten([
       for k in local.input.types : tolist(lookup(local.default.topics, k))
     ])
-    labels = tolist(lookup(local.default.labels, "labels"))
+    labels = local.default.labels
   }
 
   output = {
