@@ -1,8 +1,8 @@
 locals {
 
   default = {
-    topics = local.topics
-    labels = local.labels
+    topics                   = local.data.topics
+    labels                   = local.data.labels
     branch_name_exclude_list = ["main", "develop", "/"]
     settings = {
       auto_init              = false
