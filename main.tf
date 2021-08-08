@@ -118,7 +118,7 @@ resource "github_repository" "this" {
 }
 
 resource "github_branch" "gh_pages" {
-  count      = !contains(local.default.branch_name_exclude_list, local.output.pages.branch) ? 1 : 0
+  count      = !contains(local.default.branch_name_exclude_list, try(local.output.pages.branch, "/")) ? 1 : 0
   depends_on = [github_repository.this]
   repository = github_repository.this.name
   branch     = local.output.pages.branch
