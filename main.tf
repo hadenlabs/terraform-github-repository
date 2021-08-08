@@ -1,8 +1,8 @@
 locals {
 
   default = {
-    topics                   = yamldecode(file("${path.module}/data/topics.yaml"))
-    labels                   = yamldecode(file("${path.module}/data/labels.yaml"))
+    topics = local.topics
+    labels = local.labels
     branch_name_exclude_list = ["main", "develop", "/"]
     settings = {
       auto_init              = false
