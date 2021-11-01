@@ -2,7 +2,11 @@ package faker
 
 import (
 	"crypto/rand"
+	"fmt"
+
 	"math/big"
+
+	"github.com/lithammer/shortuuid/v3"
 
 	"github.com/hadenlabs/terraform-github-repository/internal/errors"
 )
@@ -20,17 +24,14 @@ func Repository() FakeRepository {
 }
 
 var (
-	names        = []string{"test-repository", "other-repository"}
+	name         = "testing"
 	visibilities = []string{"public", "private"}
 	descriptions = []string{"description 1", "description 2"}
 )
 
 func (n fakeRepository) Name() string {
-	num, err := rand.Int(rand.Reader, big.NewInt(int64(len(names))))
-	if err != nil {
-		panic(errors.New(errors.ErrorUnknown, err.Error()))
-	}
-	return names[num.Int64()]
+	nameuuid := fmt.Sprintf("%s-%s", name, shortuuid.New())
+	return nameuuid
 }
 
 func (n fakeRepository) Visibility() string {
