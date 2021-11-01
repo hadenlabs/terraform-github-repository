@@ -3,35 +3,45 @@ package test
 import (
 	"testing"
 
+	"github.com/hadenlabs/terraform-github-repository/config"
+
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
 
 	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
+	"github.com/hadenlabs/terraform-github-repository/internal/common/log"
 )
 
 func TestBasicTemplatesWithSettingsSuccess(t *testing.T) {
 	t.Parallel()
 
-	repository := faker.Repository().Name()
+	conf := config.Must()
+	logger := log.Factory(*conf)
+
+	name := faker.Repository().Name()
 	description := faker.Repository().Description()
-	visibility := faker.Repository().Visibility()
+	visibility := "public"
 	settings := map[string]interface{}{
 		"auto_init": true,
 		"template": map[string]string{
 			"owner":      "hadenlabs",
-			"repository": "terraform-github-repository",
+			"repository": "terraform-module-template",
 		},
 	}
+	logger.Debugf(
+		"values for test terraform-github-repository is",
+		"repository", name,
+	)
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
 		TerraformDir: "repository-basic-templates-with-settings",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
-			"description": description,
-			"name":        repository,
-			"settings":    settings,
+			"name":        name,
 			"visibility":  visibility,
+			"description": description,
+			"settings":    settings,
 		},
 	}
 
