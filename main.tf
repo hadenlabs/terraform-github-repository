@@ -8,7 +8,7 @@ locals {
       auto_init              = false
       has_issues             = true
       has_wiki               = true
-      has_projects           = true
+      has_projects           = false
       homepage_url           = ""
       is_template            = false
       allow_merge_commit     = true
