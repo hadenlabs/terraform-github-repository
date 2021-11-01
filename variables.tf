@@ -106,3 +106,9 @@ variable "add_labels_default" {
   description = "add labels default"
   default     = true
 }
+
+variable "branch_protection" {
+  type        = map(any)
+  description = "branch protections"
+  default     = {}
+}
