@@ -3,7 +3,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 | <a name="requirement_github"></a> [github](#requirement\_github) | >=4.5.0 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >=1.3.0 |
 
@@ -36,19 +36,19 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_settings"></a> [settings](#input\_settings) | Create and manage settings. | `any` | `{}` | no |
 | <a name="input_add_labels_default"></a> [add\_labels\_default](#input\_add\_labels\_default) | add labels default | `bool` | `true` | no |
-| <a name="input_is_git_flow"></a> [is\_git\_flow](#input\_is\_git\_flow) | Git Flow - Github Flow | `bool` | `false` | no |
-| <a name="input_files"></a> [files](#input\_files) | list files for repository | <pre>list(object({<br>    branch              = string<br>    file                = string<br>    content             = string<br>    commit_message      = string<br>    commit_author       = string<br>    commit_email        = string<br>    overwrite_on_create = bool<br>  }))</pre> | `[]` | no |
-| <a name="input_deploy_keys"></a> [deploy\_keys](#input\_deploy\_keys) | The name of repositories. | <pre>list(object({<br>    title     = string<br>    key       = string<br>    read_only = bool<br>  }))</pre> | `[]` | no |
 | <a name="input_collaborators"></a> [collaborators](#input\_collaborators) | List of Collaborator Objects | <pre>list(object({<br>    username   = string<br>    permission = string<br>  }))</pre> | `[]` | no |
-| <a name="input_topics"></a> [topics](#input\_topics) | topics of project. | `list(string)` | `[]` | no |
-| <a name="input_types"></a> [types](#input\_types) | types of project. | `list(string)` | `[]` | no |
+| <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
+| <a name="input_deploy_keys"></a> [deploy\_keys](#input\_deploy\_keys) | The name of repositories. | <pre>list(object({<br>    title     = string<br>    key       = string<br>    read_only = bool<br>  }))</pre> | `[]` | no |
+| <a name="input_description"></a> [description](#input\_description) | The description of the repository. | `string` | n/a | yes |
+| <a name="input_files"></a> [files](#input\_files) | list files for repository | <pre>list(object({<br>    branch              = string<br>    file                = string<br>    content             = string<br>    commit_message      = string<br>    commit_author       = string<br>    commit_email        = string<br>    overwrite_on_create = bool<br>  }))</pre> | `[]` | no |
+| <a name="input_is_git_flow"></a> [is\_git\_flow](#input\_is\_git\_flow) | Git Flow - Github Flow | `bool` | `false` | no |
+| <a name="input_name"></a> [name](#input\_name) | The name of the repository. | `string` | n/a | yes |
 | <a name="input_pages"></a> [pages](#input\_pages) | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
 | <a name="input_secrets"></a> [secrets](#input\_secrets) | secrets for repository | `map(any)` | `{}` | no |
-| <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
-| <a name="input_description"></a> [description](#input\_description) | The description of the repository. | `string` | n/a | yes |
-| <a name="input_name"></a> [name](#input\_name) | The name of the repository. | `string` | n/a | yes |
+| <a name="input_settings"></a> [settings](#input\_settings) | Create and manage settings. | `any` | `{}` | no |
+| <a name="input_topics"></a> [topics](#input\_topics) | topics of project. | `list(string)` | `[]` | no |
+| <a name="input_types"></a> [types](#input\_types) | types of project. | `list(string)` | `[]` | no |
 | <a name="input_visibility"></a> [visibility](#input\_visibility) | The visibility of the repository private or public. | `string` | `"private"` | no |
 
 ## Outputs
