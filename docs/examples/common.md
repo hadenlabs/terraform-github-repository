@@ -1,7 +1,14 @@
+<!-- Space: TerraformGithubRepository -->
+<!-- Parent: Project -->
+<!-- Title: Examples -->
+
+<!-- Label: Examples -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
+
 ### common
 
 ```hcl
-
   module "main" {
       source = "hadenlabs/repository/github"
       version = "0.11.0"
