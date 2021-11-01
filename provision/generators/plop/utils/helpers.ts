@@ -12,10 +12,10 @@ export const hyphenate = (text: string): string => {
   return text.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase()
 }
 
-export function pathExists(path: string) {
+export function pathExists(path: string): boolean {
   return fs.existsSync(path)
 }
 
-export function pathMake(path: string) {
+export function pathMake(path: string): void {
   return fs.mkdirSync(path)
 }
