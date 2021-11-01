@@ -1,6 +1,10 @@
 locals {
-
   default = {
+    branch_protection = {
+      enforce_admins   = true
+      allows_deletions = false
+    }
+
     topics                   = local.data.topics
     labels                   = local.data.labels
     branch_name_exclude_list = ["main", "develop", "/"]
@@ -37,6 +41,8 @@ locals {
     topics             = try(var.topics, [])
     add_labels_default = try(var.add_labels_default, false)
     pages              = try(var.pages, {})
+    branch_protection  = length(var.branch_protection) != 0 ? var.branch_protection : {}
+
   }
 
   generated = {
@@ -45,6 +51,9 @@ locals {
       for k in local.input.types : tolist(lookup(local.default.topics, k))
     ])
     labels = local.default.labels
+    branch_protection = {
+      for key, value in local.input.branch_protection : key => merge(local.default.branch_protection, value)
+    }
   }
 
   output = {
@@ -53,6 +62,7 @@ locals {
     topics             = distinct(flatten(concat(local.generated.topics, local.input.topics)))
     labels             = local.generated.labels
     pages              = local.generated.pages
+    branch_protection  = local.generated.branch_protection
   }
 
 }
@@ -228,4 +238,17 @@ resource "github_issue_label" "this" {
   name        = lookup(local.output.labels[count.index], "name")
   description = lookup(local.output.labels[count.index], "description")
   color       = lookup(local.output.labels[count.index], "color")
+}
+
+resource "github_branch_protection" "this" {
+  depends_on = [
+    github_repository.this,
+  ]
+
+  for_each         = local.output.branch_protection
+  repository_id    = github_repository.this.node_id
+  pattern          = each.key
+  enforce_admins   = each.value.enforce_admins
+  allows_deletions = each.value.allows_deletions
+
 }

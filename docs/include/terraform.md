@@ -25,6 +25,7 @@ No modules.
 | [github_branch.develop](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch.gh_pages](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch_default.develop_default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
+| [github_branch_protection.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection) | resource |
 | [github_issue_label.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 | [github_repository_collaborator.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_collaborator) | resource |
@@ -37,6 +38,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_add_labels_default"></a> [add\_labels\_default](#input\_add\_labels\_default) | add labels default | `bool` | `true` | no |
+| <a name="input_branch_protection"></a> [branch\_protection](#input\_branch\_protection) | branch protections | `map(any)` | `{}` | no |
 | <a name="input_collaborators"></a> [collaborators](#input\_collaborators) | List of Collaborator Objects | <pre>list(object({<br>    username   = string<br>    permission = string<br>  }))</pre> | `[]` | no |
 | <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
 | <a name="input_deploy_keys"></a> [deploy\_keys](#input\_deploy\_keys) | The name of repositories. | <pre>list(object({<br>    title     = string<br>    key       = string<br>    read_only = bool<br>  }))</pre> | `[]` | no |
