@@ -4,18 +4,28 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/hadenlabs/terraform-github-repository/config"
+
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
 
 	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
+	"github.com/hadenlabs/terraform-github-repository/internal/common/log"
 )
 
 func TestRepositoryBasicPublicSuccess(t *testing.T) {
 	t.Parallel()
 
+	conf := config.Must()
+	logger := log.Factory(*conf)
+
 	repository := faker.Repository().Name()
 	description := faker.Repository().Description()
 	visibility := "public"
+	logger.Debugf(
+		"values for test terraform-github-repository is",
+		"repository", repository,
+	)
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
