@@ -4,6 +4,6 @@ interface PrettifyCustomActionData {
   path: string
 }
 
-export default function plop(plop: NodePlopAPI) {
+export default function plop(plop: NodePlopAPI): void {
   plop.setGenerator('test', testGenerator)
 }
