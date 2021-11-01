@@ -59,7 +59,6 @@ requirements: |-
   - [python](https://www.python.org)
   - [taskfile](https://github.com/go-task/task)
 
-
 # Short description of this project
 description: |-
   Terraform module to provision an github repository.
