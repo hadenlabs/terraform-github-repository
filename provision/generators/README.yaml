@@ -19,6 +19,10 @@ categories:
 email:
   support: support@hadenlabs.com
 
+confluence:
+  space: TerraformGithubRepository
+  title: Project
+
 # Logo for this project
 #logo: docs/logo.png
 
@@ -45,9 +49,16 @@ badges:
   - name: KeepAChangelog
     image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
     url: https://keepachangelog.com
-  - name: Beacon
-    image: https://ga-beacon.appspot.com/G-MZEK48EGE8/terraform-github-repository/readme
-    url: https://github.com/hadenlabs/terraform-github-repository
+
+requirements: |-
+
+  This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
+
+  - [Pyenv](https://github.com/pyenv/pyenv)
+  - [Docker](https://www.docker.com)
+  - [python](https://www.python.org)
+  - [taskfile](https://github.com/go-task/task)
+
 
 # Short description of this project
 description: |-
