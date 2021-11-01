@@ -43,14 +43,11 @@ repos:
       - id: check-docstring-first
       - id: requirements-txt-fixer
       - id: check-symlinks
-      - id: name-tests-test
-        args:
-          - --django
       - id: file-contents-sorter
       - id: fix-encoding-pragma
       - id: sort-simple-yaml
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 9111e47764952f5937a609d040f9ae0e0da74a94
+    rev: af78fbc1bb1026afb91644ae2e278dae055644ff
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
@@ -75,7 +72,6 @@ repos:
         args:
           - '--output-file=docs/include/terraform.md'
           - '--output-mode=replace'
-          - '--sort-by-type'
 
       - id: terraform-tflint
         args:
@@ -91,36 +87,6 @@ repos:
           - --path=.
           - --repo-config-path=.github/linters/.gitleaks.toml
           - --verbose
-      - id: prepare-commit-msg
-        stages: [prepare-commit-msg]
-
-  - repo: local
-    hooks:
-      - id: prettier
-        name: prettier
-        language: system
-        entry: ./node_modules/prettier/bin-prettier.js
+      - id: hadolint
         args:
-          - '--write=true'
-          - '--config=.github/linters/prettier.config.js'
-          - '--ignore-path=.github/linters/.prettierignore'
-        files: \.(js|jsx|json|ts|tsx|mjs|d.ts|md|yml|yaml|gql|graphql|mjml)$
-        exclude: node_modules
-      - id: eslint
-        name: eslint
-        language: node
-        entry: node_modules/eslint/bin/eslint.js
-        args:
-          - '--fix'
-          - '--color'
-          - '--config=.github/linters/.eslintrc.js'
-          - '--ignore-path=.github/linters/.eslintignore'
-        files: \.(js|jsx|ts|tsx|mjs|d.ts)$
-        exclude: node_modules
-      - id: stylint
-        name: stylint
-        language: system
-        pass_filenames: true
-        entry: node_modules/stylelint/bin/stylelint.js --config=.github/linters/.stylintrc --syntax less **/*.less
-        args: [--fix]
-        files: \.(css|scss|sass|less)$
+          - --config=.github/linters/.hadolint.yaml
