@@ -12,7 +12,7 @@ import (
 func TestGitflowWithTemplatesSuccess(t *testing.T) {
 	t.Parallel()
 
-	repository := faker.Repository().Name()
+	name := faker.Repository().Name()
 	description := faker.Repository().Description()
 	visibility := faker.Repository().Visibility()
 	isGitFlow := false
@@ -20,7 +20,7 @@ func TestGitflowWithTemplatesSuccess(t *testing.T) {
 		"auto_init": true,
 		"template": map[string]string{
 			"owner":      "hadenlabs",
-			"repository": "terraform-github-repository",
+			"repository": "terraform-module-template",
 		},
 	}
 
@@ -31,7 +31,7 @@ func TestGitflowWithTemplatesSuccess(t *testing.T) {
 		Vars: map[string]interface{}{
 			"description": description,
 			"is_git_flow": isGitFlow,
-			"name":        repository,
+			"name":        name,
 			"settings":    settings,
 			"visibility":  visibility,
 		},
