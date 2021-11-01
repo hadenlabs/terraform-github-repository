@@ -1,21 +1,11 @@
 <!-- Space: TerraformGithubRepository -->
 <!-- Parent: Project -->
-<!-- Title: Troubleshooting -->
+<!-- Title: Commands -->
 
 <!-- Label: TerraformGithubRepository -->
 <!-- Label: Project -->
-<!-- Label: Troubleshooting -->
+<!-- Label: Commands -->
 <!-- Include: docs/disclaimer.md -->
 <!-- Include: ac:toc -->
 
-# Troubleshooting
-
-## Environment
-
-### Wrong pre-commit with pipenv
-
-Execute the next:
-
-```{.bash}
-task environment
-```
+## Commands
