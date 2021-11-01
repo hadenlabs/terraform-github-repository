@@ -284,3 +284,27 @@
   }
 
 ```
+
+### implement branch protection
+
+```hcl
+
+  module "repository_branch_protection" {
+    providers = {
+      github = github
+    }
+    source      = "hadenlabs/repository/github"
+    version     = "0.11.0"
+    name        = "repository-example"
+    description = "repository example"
+    visibility  = "public"
+    branch_protection    = {
+      "develop" = {
+        enforce_admins = true
+        allows_deletions = false
+      }
+    }
+
+  }
+
+```
