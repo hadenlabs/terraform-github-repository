@@ -20,7 +20,7 @@ func TestGhpagesSuccess(t *testing.T) {
 
 	repository := faker.Repository().Name()
 	description := faker.Repository().Description()
-	visibility := "public"
+	visibility := config.VisibilityPublic
 	logger.Debugf(
 		"values for test terraform-github-repository is",
 		"repository", repository,

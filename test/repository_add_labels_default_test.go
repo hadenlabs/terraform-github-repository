@@ -20,7 +20,7 @@ func TestAddLabelsDefaultSuccess(t *testing.T) {
 
 	name := faker.Repository().Name()
 	description := faker.Repository().Description()
-	visibility := "public"
+	visibility := config.VisibilityPublic
 	addLabelsDefault := true
 	logger.Debugf(
 		"values for test terraform-github-repository is",
