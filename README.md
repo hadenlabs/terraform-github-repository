@@ -354,13 +354,37 @@ Full working examples can be found in [examples](./examples) folder.
 
 ```
 
+### implement branch protection
+
+```hcl
+
+  module "repository_branch_protection" {
+    providers = {
+      github = github
+    }
+    source      = "hadenlabs/repository/github"
+    version     = "0.11.0"
+    name        = "repository-example"
+    description = "repository example"
+    visibility  = "public"
+    branch_protection    = {
+      "develop" = {
+        enforce_admins = true
+        allows_deletions = false
+      }
+    }
+
+  }
+
+```
+
  <!-- BEGIN_TF_DOCS -->
 
 ## Requirements
 
 | Name                                                                     | Version |
 | ------------------------------------------------------------------------ | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 0.14 |
+| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 0.13 |
 | <a name="requirement_github"></a> [github](#requirement_github)          | >=4.5.0 |
 | <a name="requirement_local"></a> [local](#requirement_local)             | >=1.3.0 |
 
@@ -382,6 +406,7 @@ No modules.
 | [github_branch.develop](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch.gh_pages](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch_default.develop_default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
+| [github_branch_protection.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection) | resource |
 | [github_issue_label.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/issue_label) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 | [github_repository_collaborator.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_collaborator) | resource |
@@ -393,19 +418,20 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | :-: |
-| <a name="input_settings"></a> [settings](#input_settings) | Create and manage settings. | `any` | `{}` | no |
 | <a name="input_add_labels_default"></a> [add_labels_default](#input_add_labels_default) | add labels default | `bool` | `true` | no |
-| <a name="input_is_git_flow"></a> [is_git_flow](#input_is_git_flow) | Git Flow - Github Flow | `bool` | `false` | no |
-| <a name="input_files"></a> [files](#input_files) | list files for repository | <pre>list(object({<br> branch = string<br> file = string<br> content = string<br> commit_message = string<br> commit_author = string<br> commit_email = string<br> overwrite_on_create = bool<br> }))</pre> | `[]` | no |
-| <a name="input_deploy_keys"></a> [deploy_keys](#input_deploy_keys) | The name of repositories. | <pre>list(object({<br> title = string<br> key = string<br> read_only = bool<br> }))</pre> | `[]` | no |
+| <a name="input_branch_protection"></a> [branch_protection](#input_branch_protection) | branch protections | `map(any)` | `{}` | no |
 | <a name="input_collaborators"></a> [collaborators](#input_collaborators) | List of Collaborator Objects | <pre>list(object({<br> username = string<br> permission = string<br> }))</pre> | `[]` | no |
-| <a name="input_topics"></a> [topics](#input_topics) | topics of project. | `list(string)` | `[]` | no |
-| <a name="input_types"></a> [types](#input_types) | types of project. | `list(string)` | `[]` | no |
+| <a name="input_default_branch"></a> [default_branch](#input_default_branch) | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
+| <a name="input_deploy_keys"></a> [deploy_keys](#input_deploy_keys) | The name of repositories. | <pre>list(object({<br> title = string<br> key = string<br> read_only = bool<br> }))</pre> | `[]` | no |
+| <a name="input_description"></a> [description](#input_description) | The description of the repository. | `string` | n/a | yes |
+| <a name="input_files"></a> [files](#input_files) | list files for repository | <pre>list(object({<br> branch = string<br> file = string<br> content = string<br> commit_message = string<br> commit_author = string<br> commit_email = string<br> overwrite_on_create = bool<br> }))</pre> | `[]` | no |
+| <a name="input_is_git_flow"></a> [is_git_flow](#input_is_git_flow) | Git Flow - Github Flow | `bool` | `false` | no |
+| <a name="input_name"></a> [name](#input_name) | The name of the repository. | `string` | n/a | yes |
 | <a name="input_pages"></a> [pages](#input_pages) | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
 | <a name="input_secrets"></a> [secrets](#input_secrets) | secrets for repository | `map(any)` | `{}` | no |
-| <a name="input_default_branch"></a> [default_branch](#input_default_branch) | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
-| <a name="input_description"></a> [description](#input_description) | The description of the repository. | `string` | n/a | yes |
-| <a name="input_name"></a> [name](#input_name) | The name of the repository. | `string` | n/a | yes |
+| <a name="input_settings"></a> [settings](#input_settings) | Create and manage settings. | `any` | `{}` | no |
+| <a name="input_topics"></a> [topics](#input_topics) | topics of project. | `list(string)` | `[]` | no |
+| <a name="input_types"></a> [types](#input_types) | types of project. | `list(string)` | `[]` | no |
 | <a name="input_visibility"></a> [visibility](#input_visibility) | The visibility of the repository private or public. | `string` | `"private"` | no |
 
 ## Outputs
