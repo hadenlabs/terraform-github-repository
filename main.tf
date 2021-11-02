@@ -246,7 +246,7 @@ resource "github_branch_protection" "this" {
   ]
 
   for_each         = local.output.branch_protection
-  repository_id    = github_repository.this.node_id
+  repository_id    = github_repository.this.name
   pattern          = each.key
   enforce_admins   = each.value.enforce_admins
   allows_deletions = each.value.allows_deletions
