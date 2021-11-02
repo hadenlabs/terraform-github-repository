@@ -1,5 +1,7 @@
- <!-- Space: TerraformGithubRepository -->
-<!-- Title: Project -->
+ <!-- Space: TerraformGithubRepository --> 
+<!-- Title: Project --> 
+
+
 
 <!--
 
@@ -15,13 +17,27 @@
 
   -->
 
-[![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code)](https://github.com/hadenlabs/terraform-github-repository/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
+
+ [![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code)](https://github.com/hadenlabs/terraform-github-repository/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
 
 # terraform-github-repository
 
-Terraform module to provision an github repository.
+
+
+Terraform module to provision an github repository. 
+
+
+
+
+
+
+
+
+
+
 
 ## Requirements
+
 
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
@@ -30,13 +46,18 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 - [python](https://www.python.org)
 - [taskfile](https://github.com/go-task/task)
 
+
+
+
+
 ## Usage
+
 
 ```hcl
 
   module "main_with_pages" {
     source = "hadenlabs/repository/github"
-    version = "0.11.0"
+    version = "0.12.0"
 
     providers = {
       github = github
@@ -65,6 +86,11 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 
 Full working examples can be found in [examples](./examples) folder.
 
+
+
+
+
+
 ## Examples
 
 <!-- Space: TerraformGithubRepository -->
@@ -80,7 +106,7 @@ Full working examples can be found in [examples](./examples) folder.
 ```hcl
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.11.0"
+      version = "0.12.0"
 
       providers = {
         github = github
@@ -105,7 +131,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main_with_key" {
     source = "hadenlabs/repository/github"
-    version = "0.11.0"
+    version = "0.12.0"
 
     providers = {
       github = github
@@ -129,7 +155,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main_with_secrets" {
     source = "hadenlabs/repository/github"
-    version = "0.11.0"
+    version = "0.12.0"
 
     providers = {
       github = github
@@ -151,7 +177,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main_with_pages" {
     source = "hadenlabs/repository/github"
-    version = "0.11.0"
+    version = "0.12.0"
 
     providers = {
       github = github
@@ -185,7 +211,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.11.0"
+      version = "0.12.0"
 
       providers = {
         github = github
@@ -215,7 +241,7 @@ Full working examples can be found in [examples](./examples) folder.
 
   module "main" {
       source = "hadenlabs/repository/github"
-      version = "0.11.0"
+      version = "0.12.0"
 
       providers = {
         github = github
@@ -250,7 +276,7 @@ Full working examples can be found in [examples](./examples) folder.
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.11.0"
+    version     = "0.12.0"
     name        = "repository-example"
     description = "repository example"
     visibility  = "public"
@@ -281,7 +307,7 @@ Full working examples can be found in [examples](./examples) folder.
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.11.0"
+    version     = "0.12.0"
     name        = "repository-example"
     is_git_flow = true
     description = "repository example"
@@ -302,7 +328,7 @@ Full working examples can be found in [examples](./examples) folder.
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.11.0"
+    version     = "0.12.0"
     name        = "repository-example"
     description = "repository example"
     visibility  = "public"
@@ -321,7 +347,7 @@ Full working examples can be found in [examples](./examples) folder.
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.11.0"
+    version     = "0.12.0"
     name        = "repository-example"
     description = "repository example"
     visibility  = "public"
@@ -339,7 +365,7 @@ Full working examples can be found in [examples](./examples) folder.
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.11.0"
+    version     = "0.12.0"
     name        = "repository-example"
     description = "repository example"
     visibility  = "public"
@@ -363,7 +389,7 @@ Full working examples can be found in [examples](./examples) folder.
       github = github
     }
     source      = "hadenlabs/repository/github"
-    version     = "0.11.0"
+    version     = "0.12.0"
     name        = "repository-example"
     description = "repository example"
     visibility  = "public"
@@ -378,21 +404,22 @@ Full working examples can be found in [examples](./examples) folder.
 
 ```
 
- <!-- BEGIN_TF_DOCS -->
 
+
+ <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-| Name                                                                     | Version |
-| ------------------------------------------------------------------------ | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 0.13 |
-| <a name="requirement_github"></a> [github](#requirement_github)          | >=4.5.0 |
-| <a name="requirement_local"></a> [local](#requirement_local)             | >=1.3.0 |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >=4.5.0 |
+| <a name="requirement_local"></a> [local](#requirement\_local) | >=1.3.0 |
 
 ## Providers
 
-| Name                                                      | Version |
-| --------------------------------------------------------- | ------- |
-| <a name="provider_github"></a> [github](#provider_github) | >=4.5.0 |
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | >=4.5.0 |
 
 ## Modules
 
@@ -401,7 +428,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-| --- | --- |
+|------|------|
 | [github_actions_secret.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
 | [github_branch.develop](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch.gh_pages](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
@@ -417,36 +444,39 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-| --- | --- | --- | --- | :-: |
-| <a name="input_add_labels_default"></a> [add_labels_default](#input_add_labels_default) | add labels default | `bool` | `true` | no |
-| <a name="input_branch_protection"></a> [branch_protection](#input_branch_protection) | branch protections | `map(any)` | `{}` | no |
-| <a name="input_collaborators"></a> [collaborators](#input_collaborators) | List of Collaborator Objects | <pre>list(object({<br> username = string<br> permission = string<br> }))</pre> | `[]` | no |
-| <a name="input_default_branch"></a> [default_branch](#input_default_branch) | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
-| <a name="input_deploy_keys"></a> [deploy_keys](#input_deploy_keys) | The name of repositories. | <pre>list(object({<br> title = string<br> key = string<br> read_only = bool<br> }))</pre> | `[]` | no |
-| <a name="input_description"></a> [description](#input_description) | The description of the repository. | `string` | n/a | yes |
-| <a name="input_files"></a> [files](#input_files) | list files for repository | <pre>list(object({<br> branch = string<br> file = string<br> content = string<br> commit_message = string<br> commit_author = string<br> commit_email = string<br> overwrite_on_create = bool<br> }))</pre> | `[]` | no |
-| <a name="input_is_git_flow"></a> [is_git_flow](#input_is_git_flow) | Git Flow - Github Flow | `bool` | `false` | no |
-| <a name="input_name"></a> [name](#input_name) | The name of the repository. | `string` | n/a | yes |
-| <a name="input_pages"></a> [pages](#input_pages) | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
-| <a name="input_secrets"></a> [secrets](#input_secrets) | secrets for repository | `map(any)` | `{}` | no |
-| <a name="input_settings"></a> [settings](#input_settings) | Create and manage settings. | `any` | `{}` | no |
-| <a name="input_topics"></a> [topics](#input_topics) | topics of project. | `list(string)` | `[]` | no |
-| <a name="input_types"></a> [types](#input_types) | types of project. | `list(string)` | `[]` | no |
-| <a name="input_visibility"></a> [visibility](#input_visibility) | The visibility of the repository private or public. | `string` | `"private"` | no |
+|------|-------------|------|---------|:--------:|
+| <a name="input_add_labels_default"></a> [add\_labels\_default](#input\_add\_labels\_default) | add labels default | `bool` | `true` | no |
+| <a name="input_branch_protection"></a> [branch\_protection](#input\_branch\_protection) | branch protections | `map(any)` | `{}` | no |
+| <a name="input_collaborators"></a> [collaborators](#input\_collaborators) | List of Collaborator Objects | <pre>list(object({<br>    username   = string<br>    permission = string<br>  }))</pre> | `[]` | no |
+| <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
+| <a name="input_deploy_keys"></a> [deploy\_keys](#input\_deploy\_keys) | The name of repositories. | <pre>list(object({<br>    title     = string<br>    key       = string<br>    read_only = bool<br>  }))</pre> | `[]` | no |
+| <a name="input_description"></a> [description](#input\_description) | The description of the repository. | `string` | n/a | yes |
+| <a name="input_files"></a> [files](#input\_files) | list files for repository | <pre>list(object({<br>    branch              = string<br>    file                = string<br>    content             = string<br>    commit_message      = string<br>    commit_author       = string<br>    commit_email        = string<br>    overwrite_on_create = bool<br>  }))</pre> | `[]` | no |
+| <a name="input_is_git_flow"></a> [is\_git\_flow](#input\_is\_git\_flow) | Git Flow - Github Flow | `bool` | `false` | no |
+| <a name="input_name"></a> [name](#input\_name) | The name of the repository. | `string` | n/a | yes |
+| <a name="input_pages"></a> [pages](#input\_pages) | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
+| <a name="input_secrets"></a> [secrets](#input\_secrets) | secrets for repository | `map(any)` | `{}` | no |
+| <a name="input_settings"></a> [settings](#input\_settings) | Create and manage settings. | `any` | `{}` | no |
+| <a name="input_topics"></a> [topics](#input\_topics) | topics of project. | `list(string)` | `[]` | no |
+| <a name="input_types"></a> [types](#input\_types) | types of project. | `list(string)` | `[]` | no |
+| <a name="input_visibility"></a> [visibility](#input\_visibility) | The visibility of the repository private or public. | `string` | `"private"` | no |
 
 ## Outputs
 
-| Name                                                              | Description                            |
-| ----------------------------------------------------------------- | -------------------------------------- |
-| <a name="output_deploy_key"></a> [deploy_key](#output_deploy_key) | output instance deploy_key             |
-| <a name="output_files"></a> [files](#output_files)                | output instance github files           |
-| <a name="output_instance"></a> [instance](#output_instance)       | output instance repository             |
-| <a name="output_labels"></a> [labels](#output_labels)             | output topics github repository        |
-| <a name="output_name"></a> [name](#output_name)                   | output name repository                 |
-| <a name="output_secrets"></a> [secrets](#output_secrets)          | output instance github actions secrets |
-| <a name="output_topics"></a> [topics](#output_topics)             | output topics github repository        |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_deploy_key"></a> [deploy\_key](#output\_deploy\_key) | output instance deploy\_key |
+| <a name="output_files"></a> [files](#output\_files) | output instance github files |
+| <a name="output_instance"></a> [instance](#output\_instance) | output instance repository |
+| <a name="output_labels"></a> [labels](#output\_labels) | output topics github repository |
+| <a name="output_name"></a> [name](#output\_name) | output name repository |
+| <a name="output_secrets"></a> [secrets](#output\_secrets) | output instance github actions secrets |
+| <a name="output_topics"></a> [topics](#output\_topics) | output topics github repository |
 <!-- END_TF_DOCS -->
+
+
+
+
 
 ## Help
 
@@ -454,11 +484,14 @@ No modules.
 
 File a GitHub [issue](https://github.com/hadenlabs/terraform-github-repository/issues).
 
+
 ## Contributing
 
 ### Bug Reports & Feature Requests
 
+
 Please use the [issue tracker](https://github.com/hadenlabs/terraform-github-repository/issues) to report any bugs or file feature requests.
+
 
 ### Development
 
@@ -471,7 +504,10 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 5.  Submit a **Pull Request** so that we can review your changes
 
+
+
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
+
 
 ## Module Versioning
 
@@ -485,21 +521,37 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ### Backwards compatibility in `0.0.z` and `0.y.z` version
 
-- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is increased. (Initial development)
-- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is increased. (Pre-release)
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is
+  increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is
+  increased. (Pre-release)
+
+
+
 
 ## Copyright
 
 Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
 
+
+
 ## Trademarks
 
 All other trademarks referenced herein are the property of their respective owners.
+
+
+
+
+
 
 ## License
 
 The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
 
+
+
 ## Don't forget to 🌟 Star 🌟 the repo if you like terraform-github-repository
 
+
 [Your feedback is appreciated](https://github.com/hadenlabs/terraform-github-repository/issues)
+
