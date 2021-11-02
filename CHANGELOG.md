@@ -2,6 +2,49 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.12.0"></a>
+
+## [0.12.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.11.0...0.12.0)
+
+> 2021-11-01
+
+### Bug Fixes
+
+- load name repository id ([#74](https://github.com/hadenlabs/terraform-github-repository/issues/74))
+- test generate testing faker ([#82](https://github.com/hadenlabs/terraform-github-repository/issues/82))
+- version tag ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+
+### Code Refactoring
+
+- name template for generator plop ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- configuration project ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- dependencies node ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- generator readme ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- change make actions to task ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+
+### Features
+
+- implement change visibility with configuration ([#74](https://github.com/hadenlabs/terraform-github-repository/issues/74))
+- change visibility repository ([#74](https://github.com/hadenlabs/terraform-github-repository/issues/74))
+- implement constant visibility repository ([#74](https://github.com/hadenlabs/terraform-github-repository/issues/74))
+- implement module branch protection ([#74](https://github.com/hadenlabs/terraform-github-repository/issues/74))
+- implement configuration branch protection ([#74](https://github.com/hadenlabs/terraform-github-repository/issues/74))
+- implement faker test repository ([#82](https://github.com/hadenlabs/terraform-github-repository/issues/82))
+- implement common and faker repository ([#82](https://github.com/hadenlabs/terraform-github-repository/issues/82))
+- change version terraform ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- implement script test ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- implement configuration log ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- implement return type variable ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- implement configuration sonar ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- implement github actions confluence and sonarqube ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- implement contributing to confluence ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+- implement lints configuration project ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+
+### Features
+
+- disabled default project ([#74](https://github.com/hadenlabs/terraform-github-repository/issues/74))
+- implement diagrams with plantuml ([#80](https://github.com/hadenlabs/terraform-github-repository/issues/80))
+
 <a name="0.11.0"></a>
 
 ## [0.11.0](https://github.com/hadenlabs/terraform-github-repository/compare/0.10.0...0.11.0)
