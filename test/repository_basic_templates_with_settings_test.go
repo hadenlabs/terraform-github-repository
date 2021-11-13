@@ -20,7 +20,7 @@ func TestBasicTemplatesWithSettingsSuccess(t *testing.T) {
 
 	name := faker.Repository().Name()
 	description := faker.Repository().Description()
-	visibility := config.VisibilityPublic
+	visibility := config.VisibilityPrivate
 	settings := map[string]interface{}{
 		"auto_init": true,
 		"template": map[string]string{

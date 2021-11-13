@@ -18,12 +18,12 @@ func TestGhpagesSuccess(t *testing.T) {
 	conf := config.Must()
 	logger := log.Factory(*conf)
 
-	repository := faker.Repository().Name()
+	repositoryName := faker.Repository().Name()
 	description := faker.Repository().Description()
 	visibility := config.VisibilityPublic
 	logger.Debugf(
 		"values for test terraform-github-repository is",
-		"repository", repository,
+		"repository", repositoryName,
 	)
 
 	settings := map[string]interface{}{
@@ -42,7 +42,7 @@ func TestGhpagesSuccess(t *testing.T) {
 		Upgrade:      true,
 		Vars: map[string]interface{}{
 			"description": description,
-			"name":        repository,
+			"name":        repositoryName,
 			"settings":    settings,
 			"visibility":  visibility,
 			"pages":       ghPages,

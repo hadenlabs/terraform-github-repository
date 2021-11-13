@@ -18,13 +18,13 @@ func TestAddLabelsDefaultSuccess(t *testing.T) {
 	conf := config.Must()
 	logger := log.Factory(*conf)
 
-	name := faker.Repository().Name()
+	repositoryName := faker.Repository().Name()
 	description := faker.Repository().Description()
-	visibility := config.VisibilityPublic
+	visibility := config.VisibilityPrivate
 	addLabelsDefault := true
 	logger.Debugf(
 		"values for test terraform-github-repository is",
-		"repository", name,
+		"repository", repositoryName,
 	)
 
 	terraformOptions := &terraform.Options{
@@ -32,7 +32,7 @@ func TestAddLabelsDefaultSuccess(t *testing.T) {
 		TerraformDir: "repository-add-labels-default",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
-			"name":               name,
+			"name":               repositoryName,
 			"visibility":         visibility,
 			"add_labels_default": addLabelsDefault,
 			"description":        description,
