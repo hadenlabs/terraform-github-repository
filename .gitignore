@@ -363,5 +363,6 @@ zsdoc/data
 .scannerwork
 .secrets
 .task
+.terraform.lock.hcl
 TMP_CHANGELOG.md
 bin
