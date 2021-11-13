@@ -17,7 +17,7 @@ func TestBranchProtectionSuccess(t *testing.T) {
 	conf := config.Must()
 	logger := log.Factory(*conf)
 
-	repository := faker.Repository().Name()
+	repositoryName := faker.Repository().Name()
 	description := faker.Repository().Description()
 	visibility := config.VisibilityPublic
 	branchProtection := map[string]interface{}{
@@ -29,7 +29,7 @@ func TestBranchProtectionSuccess(t *testing.T) {
 
 	logger.Debugf(
 		"values for test terraform-github-repository is",
-		"repository", repository,
+		"repository", repositoryName,
 	)
 
 	settings := map[string]interface{}{
@@ -41,7 +41,7 @@ func TestBranchProtectionSuccess(t *testing.T) {
 		TerraformDir: "repository-branch-protection",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
-			"name":              repository,
+			"name":              repositoryName,
 			"description":       description,
 			"settings":          settings,
 			"visibility":        visibility,
