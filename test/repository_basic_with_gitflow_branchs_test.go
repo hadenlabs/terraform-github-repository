@@ -6,19 +6,31 @@ import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
 
+	"github.com/hadenlabs/terraform-github-repository/config"
+
 	"github.com/hadenlabs/terraform-github-repository/internal/app/external/faker"
+
+	"github.com/hadenlabs/terraform-github-repository/internal/common/log"
 )
 
 func TestBasicWithGitflowBranchsSuccess(t *testing.T) {
 	t.Parallel()
 
-	repository := faker.Repository().Name()
+	conf := config.Must()
+	logger := log.Factory(*conf)
+
+	repositoryName := faker.Repository().Name()
 	description := faker.Repository().Description()
-	visibility := faker.Repository().Visibility()
+	visibility := config.VisibilityPublic
 	isGitFlow := true
 	settings := map[string]interface{}{
 		"auto_init": true,
 	}
+
+	logger.Debugf(
+		"values for test terraform-github-repository is",
+		"repository", repositoryName,
+	)
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
@@ -26,7 +38,7 @@ func TestBasicWithGitflowBranchsSuccess(t *testing.T) {
 		Upgrade:      true,
 		Vars: map[string]interface{}{
 			"description": description,
-			"name":        repository,
+			"name":        repositoryName,
 			"settings":    settings,
 			"visibility":  visibility,
 			"is_git_flow": isGitFlow,
