@@ -18,7 +18,7 @@ func TestBasicTemplatesWithSettingsSuccess(t *testing.T) {
 	conf := config.Must()
 	logger := log.Factory(*conf)
 
-	name := faker.Repository().Name()
+	repositoryName := faker.Repository().Name()
 	description := faker.Repository().Description()
 	visibility := config.VisibilityPrivate
 	settings := map[string]interface{}{
@@ -30,7 +30,7 @@ func TestBasicTemplatesWithSettingsSuccess(t *testing.T) {
 	}
 	logger.Debugf(
 		"values for test terraform-github-repository is",
-		"repository", name,
+		"repository", repositoryName,
 	)
 
 	terraformOptions := &terraform.Options{
@@ -38,7 +38,7 @@ func TestBasicTemplatesWithSettingsSuccess(t *testing.T) {
 		TerraformDir: "repository-basic-templates-with-settings",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
-			"name":        name,
+			"name":        repositoryName,
 			"visibility":  visibility,
 			"description": description,
 			"settings":    settings,
