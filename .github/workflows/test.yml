@@ -22,6 +22,7 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
   GITHUB_OWNER: ${{ secrets.GH_OWNER }}
+  GITHUB_ORGANIZATION: ${{ secrets.GH_OWNER }}
 
 jobs:
   test:
