@@ -122,7 +122,8 @@ resource "github_repository" "this" {
       has_wiki,
       is_template,
       vulnerability_alerts,
-      description
+      description,
+      pages["branch"],
     ]
   }
 }
