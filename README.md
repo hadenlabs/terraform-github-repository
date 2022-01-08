@@ -15,7 +15,7 @@
 
   -->
 
-[![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code)](https://github.com/hadenlabs/terraform-github-repository/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
+[![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-repository)](https://github.com/hadenlabs/terraform-github-repository/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code)](https://github.com/hadenlabs/terraform-github-repository/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org)
 
 # terraform-github-repository
 
@@ -25,8 +25,7 @@ Terraform module to provision an github repository.
 
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-- [Pyenv](https://github.com/pyenv/pyenv)
-- [Docker](https://www.docker.com)
+- [terraform](https://www.terraform.io)
 - [python](https://www.python.org)
 - [taskfile](https://github.com/go-task/task)
 
@@ -490,7 +489,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## Copyright
 
-Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
+Copyright © 2018-2022 [Hadenlabs](https://hadenlabs.com)
 
 ## Trademarks
 
