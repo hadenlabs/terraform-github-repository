@@ -119,3 +119,8 @@ tasks:
     desc: Setup environment of project
     cmds:
       - task: python:environment
+
+  test:
+    desc: run test
+    cmds:
+      - task: go:test
