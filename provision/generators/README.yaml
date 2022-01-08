@@ -53,9 +53,7 @@ badges:
 requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
-
-  - [Pyenv](https://github.com/pyenv/pyenv)
-  - [Docker](https://www.docker.com)
+  - [terraform](https://www.terraform.io)
   - [python](https://www.python.org)
   - [taskfile](https://github.com/go-task/task)
 
