@@ -1,7 +1,3 @@
-<!-- Space: TerraformGithubRepository -->
-<!-- Parent: Project -->
-<!-- Title: Authors -->
-
 # Authors
 
 ## Leads
