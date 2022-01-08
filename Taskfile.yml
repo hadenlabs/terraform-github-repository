@@ -8,10 +8,10 @@ includes:
   go: ./provision/task/go.yml
   docs: ./provision/task/docs.yml
   docker: ./provision/task/docker.yml
-  plantuml: ./provision/task/plantuml.yml
   gitflow: ./provision/task/gitflow.yml
   version: ./provision/task/version.yml
   mark: ./provision/task/mark.yml
+  plantuml: ./provision/task/plantuml.yml
   prettier: ./provision/task/prettier.yml
   sonar: ./provision/task/sonar.yml
   ssh: ./provision/task/ssh.yml
@@ -106,6 +106,8 @@ tasks:
   setup:
     desc: Setup dependences of project
     cmds:
+      - >-
+        [ -e ".env" ] || cp -rf .env.example .env
       - task: python:setup
       - task: python:precommit
       - task: go:setup
