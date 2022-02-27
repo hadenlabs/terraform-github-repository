@@ -1,11 +1,11 @@
-<!-- Space: TerraformGithubRepository -->
-<!-- Parent: Project -->
-<!-- Title: Components -->
+<!-- Space: Projects -->
+<!-- Parent: TerraformGithubRepository -->
+<!-- Title: Components TerraformGithubRepository -->
 
 <!-- Label: TerraformGithubRepository -->
 <!-- Label: Project -->
 <!-- Label: Components -->
-<!-- Include: docs/disclaimer.md -->
+<!-- Include: disclaimer.md -->
 <!-- Include: ac:toc -->
 
 # components
