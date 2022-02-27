@@ -55,14 +55,13 @@ tasks:
       - cmd: >-
           for file in {{.FILES_CONFLUENCE}}; do
             echo "> Sync $file";
-            echo -n {{.CONFLUENCE_ACCESS_TOKEN}} | docker run \
+            docker run \
             --platform linux/amd64 \
             --rm \
             --workdir /usr/src/ \
             -v {{.PWD}}/:/usr/src/ \
             -v {{.PWD}}/config.log:/config/config.toml \
             kovetskiy/mark:latest mark --config /config/config.toml \
-            --minor-edit \
             -f $file;
             echo;
           done

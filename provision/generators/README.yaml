@@ -19,10 +19,6 @@ categories:
 email:
   support: support@hadenlabs.com
 
-confluence:
-  space: TerraformGithubRepository
-  title: Project
-
 # Logo for this project
 #logo: docs/logo.png
 
@@ -40,18 +36,30 @@ badges:
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/lint-code
     url: https://github.com/hadenlabs/terraform-github-repository/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/ci
+    url: https://github.com/hadenlabs/terraform-github-repository/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-repository/test
+    url: https://github.com/hadenlabs/terraform-github-repository/actions?workflow=test
   - name: pre-commit
     image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
     url: https://github.com/pre-commit/pre-commit
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange
+    url: https://keepachangelog.com
+  - name: Terraform Version
+    image: https://img.shields.io/badge/terraform-1.x%20|%200.15%20|%200.14%20|%200.13%20|%200.12.20+-623CE4.svg?logo=terraform
+    url: https://github.com/hashicorp/terraform/releases
 
 requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
-  - [terraform](https://www.terraform.io)
-  - [python](https://www.python.org)
+  - [gomplate](https://github.com/hairyhenderson/gomplate)
+  - [terraform](https://github.com/hashicorp/terraform)
   - [taskfile](https://github.com/go-task/task)
 
 # Short description of this project
@@ -93,9 +101,6 @@ usage: |-
   ```
 
   Full working examples can be found in [examples](./examples) folder.
-
-examples:
-  - 'docs/examples/common.md'
 
 include:
   - 'docs/include/targets.md'
