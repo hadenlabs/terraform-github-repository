@@ -1,6 +1,6 @@
 {
   "name": "@hadenlabs/terraform-github-repository",
-  "version": "0.12.0",
+  "version": "1.0.0",
   "description": "terraform-github-repository for hadenlabs",
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "LGPL-3.0",
