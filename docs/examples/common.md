@@ -1,9 +1,9 @@
-<!-- Space: TerraformGithubRepository -->
-<!-- Parent: Project -->
-<!-- Title: Examples -->
+<!-- Space: Projects -->
+<!-- Parent: TerraformGithubRepository -->
+<!-- Title: Examples TerraformGithubRepository -->
 
 <!-- Label: Examples -->
-<!-- Include: docs/disclaimer.md -->
+<!-- Include: ./../disclaimer.md -->
 <!-- Include: ac:toc -->
 
 ### common
