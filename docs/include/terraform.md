@@ -3,7 +3,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.20, < 2.0 |
 | <a name="requirement_github"></a> [github](#requirement\_github) | >=4.5.0 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >=1.3.0 |
 
