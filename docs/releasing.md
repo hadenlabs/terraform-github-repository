@@ -1,11 +1,11 @@
-<!-- Space: TerraformGithubRepository -->
-<!-- Parent: Project -->
-<!-- Title: Releasing -->
+<!-- Space: Projects -->
+<!-- Parent: TerraformGithubRepository -->
+<!-- Title: Releasing TerraformGithubRepository -->
 
 <!-- Label: TerraformGithubRepository -->
 <!-- Label: Project -->
 <!-- Label: Releasing -->
-<!-- Include: docs/disclaimer.md -->
+<!-- Include: disclaimer.md -->
 <!-- Include: ac:toc -->
 
 # Releasing
