@@ -1,11 +1,11 @@
-<!-- Space: TerraformGithubRepository -->
-<!-- Parent: Project -->
-<!-- Title: Contributing -->
+<!-- Space: Projects -->
+<!-- Parent: TerraformGithubRepository -->
+<!-- Title: Contributing TerraformGithubRepository -->
 
 <!-- Label: TerraformGithubRepository -->
 <!-- Label: Project -->
 <!-- Label: Contributing -->
-<!-- Include: docs/disclaimer.md -->
+<!-- Include: disclaimer.md -->
 <!-- Include: ac:toc -->
 
 # How To Contribute
