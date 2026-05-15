@@ -1,11 +1,3 @@
-<!-- Space: Projects -->
-<!-- Parent: TerraformGithubRepository -->
-<!-- Title: Examples TerraformGithubRepository -->
-
-<!-- Label: Examples -->
-<!-- Include: ./../disclaimer.md -->
-<!-- Include: ac:toc -->
-
 ### common
 
 ```hcl
@@ -104,7 +96,6 @@
     settings = {
       has_wiki               = true
       has_projects           = true
-      vulnerability_alerts   = true
     }
   }
 

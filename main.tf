@@ -23,7 +23,6 @@ locals {
       license_template       = ""
       archived               = false
       archive_on_destroy     = false
-      vulnerability_alerts   = true
       template               = {}
     }
 
@@ -67,6 +66,7 @@ locals {
 
 }
 
+#tfsec:ignore:github-repositories-private
 resource "github_repository" "this" {
   name        = var.name
   description = var.description
@@ -87,7 +87,7 @@ resource "github_repository" "this" {
   license_template       = local.output.settings.license_template
   archived               = local.output.settings.archived
   archive_on_destroy     = local.output.settings.archive_on_destroy
-  vulnerability_alerts   = local.output.settings.vulnerability_alerts
+  vulnerability_alerts   = true
 
   topics = var.topics
 
@@ -117,11 +117,9 @@ resource "github_repository" "this" {
     ignore_changes = [
       auto_init,
       has_issues,
-      has_downloads,
       has_projects,
       has_wiki,
       is_template,
-      vulnerability_alerts,
       description,
       pages["branch"],
     ]

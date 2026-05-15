@@ -4,24 +4,31 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 
 	coreconfig "github.com/hadenlabs/terraform-github-repository/config"
 )
 
 func TestConfigLoadEnvSuccess(t *testing.T) {
 	conf, err := LoadEnvWithFilename("./mocking/config.env")
-	assert.Empty(t, err, err)
+
+	require.NoError(t, err)
+
+	assert.NotNil(t, conf)
 	assert.IsType(t, &coreconfig.Config{}, conf)
-	assert.Equal(t, "zap", conf.Log.Provider, conf.Log.Provider)
+	assert.Equal(t, "zap", conf.Log.Provider)
 }
 
 func TestConfigMustLoadEnvWithPanic(t *testing.T) {
-	assert.Panics(t, func() { MustLoadEnvWithFilename("./mocking/notfound.env") }, "The code did not panic")
+	assert.Panics(t, func() {
+		MustLoadEnvWithFilename("./mocking/notfound.env")
+	})
 }
 
-func TestConfigLoadEnvFailedFailed(t *testing.T) {
+func TestConfigLoadEnvFailed(t *testing.T) {
 	conf, err := LoadEnvWithFilename("./mocking/notfound.env")
-	assert.NotEmpty(t, err, err)
-	assert.IsType(t, &coreconfig.Config{}, conf)
-	assert.Empty(t, conf)
+
+	require.Error(t, err)
+
+	assert.Nil(t, conf)
 }

@@ -66,41 +66,11 @@ requirements: |-
 description: |-
   Terraform module to provision an github repository.
 
-# How to use this project
-usage: |-
+usages:
+  - docs/usage.md
 
-  ```hcl
-
-    module "main_with_pages" {
-      source = "hadenlabs/repository/github"
-      version = "1.0.0"
-
-      providers = {
-        github = github
-      }
-
-      name        = "repository-example-with-key"
-      description = "github repository for repository"
-      visibility  = "public"
-      pages = {
-        branch = "gh-pages"
-        path = "/"
-      }
-
-      topics = [
-          "go",
-          "terraform",
-      ]
-
-      settings = {
-        has_wiki               = true
-        has_projects           = true
-        vulnerability_alerts   = true
-      }
-
-  ```
-
-  Full working examples can be found in [examples](./examples) folder.
+examples:
+  - "docs/examples/common.md"
 
 include:
   - 'docs/include/targets.md'

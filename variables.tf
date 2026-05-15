@@ -60,7 +60,7 @@ variable "settings" {
     condition = can([for field in keys(try(var.settings, {})) : !contains([
       "allow_merge_commit", "allow_squash_merge", "allow_rebase_merge", "delete_branch_on_merge",
       "auto_init", "has_issues", "has_wiki", "has_projects", "homepage_url", "is_template",
-    "gitignore_template", "license_template", "archived", "archive_on_destroy", "template", "vulnerability_alerts"], field)])
+    "gitignore_template", "license_template", "archived", "archive_on_destroy", "template"], field)])
     error_message = "ERROR: Key not permitted."
   }
 }
