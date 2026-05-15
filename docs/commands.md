@@ -1,13 +1,3 @@
-<!-- Space: Projects -->
-<!-- Parent: TerraformGithubRepository -->
-<!-- Title: Commands TerraformGithubRepository -->
-
-<!-- Label: TerraformGithubRepository -->
-<!-- Label: Project -->
-<!-- Label: Commands -->
-<!-- Include: disclaimer.md -->
-<!-- Include: ac:toc -->
-
 ## Commands
 
 ### Terragrunt

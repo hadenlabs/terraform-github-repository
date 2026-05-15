@@ -4,10 +4,10 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 module "main" {
-  source = "../.."
+  source      = "../.."
   name        = var.name
   description = var.description
   visibility  = var.visibility
   settings    = var.settings
-  pages    = var.pages
+  pages       = var.pages
 }

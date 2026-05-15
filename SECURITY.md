@@ -1,12 +1,3 @@
-<!-- Space: Projects -->
-<!-- Parent: TerraformGithubRepository -->
-<!-- Title: Security TerraformGithubRepository -->
-
-<!-- Label: TerraformGithubRepository -->
-<!-- Label: Security -->
-<!-- Include: docs/disclaimer.md -->
-<!-- Include: ac:toc -->
-
 # Security Policy
 
 ## Reporting a Security Bug

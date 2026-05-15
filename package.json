@@ -5,7 +5,7 @@
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "LGPL-3.0",
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "scripts": {
     "build": "tsc -p ./",
@@ -22,10 +22,7 @@
     "lint:less:fix": "yarn lint:less --fix",
     "ncu": "ncu -u --target minor",
     "ncu:patch": "ncu -u --target patch",
-    "prebuild": "mkdirp build && yarn run clean:build:all",
-    "prettier": "prettier --config=.ci/linters/prettier.config.js --ignore-path=.ci/linters/.prettierignore --list-different",
-    "prettier:fix": "yarn prettier:lint --write=true",
-    "prettier:lint": "yarn prettier '**/*.{js?(on),ts?(x),scss,md,y?(a)ml,gql,graphql?(s),less,mjml}' --write=false"
+    "prebuild": "mkdirp build && yarn run clean:build:all"
   },
   "publishConfig": {
     "access": "public",
@@ -64,6 +61,5 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.5"
-  },
-  "prettier": "./.ci/linters/prettier.config.js"
+  }
 }

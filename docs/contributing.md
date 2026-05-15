@@ -1,33 +1,23 @@
-<!-- Space: Projects -->
-<!-- Parent: TerraformGithubRepository -->
-<!-- Title: Contributing TerraformGithubRepository -->
-
-<!-- Label: TerraformGithubRepository -->
-<!-- Label: Project -->
-<!-- Label: Contributing -->
-<!-- Include: disclaimer.md -->
-<!-- Include: ac:toc -->
-
 # How To Contribute
 
 Contributions to terraform-github-repository are welcome.
 
 Feel free to use all of the contribution options:
 
-- Contribute to terraform-github-repository repositories on [GitHub](https://github.com/hadenlabs/terraform-github-repository). See [Git flow](./contribute/git-flow.md).
+- Contribute to terraform-github-repository repositories on [GitHub](https://github.com/hadenlabs/terraform-github-repository). See [GitHub flow](./contribute/github-flow.md).
 
 ## Getting Started
 
 ### Development
 
-In general, MRs are welcome. We follow the typical "fork-and-pull" [Git flow](./contribute/git-flow.md).
+In general, MRs are welcome. We follow the typical "fork-and-pull" [Github flow](./contribute/github-flow.md).
 
-1.  **Fork** the repo on GitLab
-2.  **Clone** the project to your own machine
-3.  **Commit** changes to your own branch using [Git flow](./contribute/git-flow.md)
-4.  **Push** your work back up to your fork
+1. **Fork** the repo on Github
+2. **Clone** the project to your own machine
+3. **Commit** changes to your own branch using [Github Flow](./contribute/github-flow.md)
+4. **Push** your work back up to your fork
 
-5.  Submit a **Pull Request** so that we can review your changes
+5. Submit a **Pull Request** so that we can review your changes
 
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
 
@@ -71,7 +61,7 @@ Examples commit messages:
 
 ### Branches
 
-See [Git flow](./contribute/git-flow.md).
+See [Github Flow](./contribute/github-flow.md).
 
 ### Documentation
 
@@ -83,10 +73,10 @@ See [Testing](./testing.md).
 
 ### Code Submission
 
-1.  See if a [Pull Request](https://github.com/hadenlabs/terraform-github-repository/pulls) exists
-    - Add some comments or review the code to help it along
-    - Don\'t be afraid to comment when logic needs clarification
-2.  Create a Fork and open a [Pull Request](https://github.com/hadenlabs/terraform-github-repository/pulls) if needed
+1. See if a [Pull Request](https://github.com/hadenlabs/terraform-github-repository/pulls) exists
+   - Add some comments or review the code to help it along
+   - Don\'t be afraid to comment when logic needs clarification
+2. Create a Fork and open a [Pull Request](https://github.com/hadenlabs/terraform-github-repository/pulls) if needed
 
 ### Code Review
 

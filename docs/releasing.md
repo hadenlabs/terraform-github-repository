@@ -1,13 +1,3 @@
-<!-- Space: Projects -->
-<!-- Parent: TerraformGithubRepository -->
-<!-- Title: Releasing TerraformGithubRepository -->
-
-<!-- Label: TerraformGithubRepository -->
-<!-- Label: Project -->
-<!-- Label: Releasing -->
-<!-- Include: disclaimer.md -->
-<!-- Include: ac:toc -->
-
 # Releasing
 
 ## Bump a new version

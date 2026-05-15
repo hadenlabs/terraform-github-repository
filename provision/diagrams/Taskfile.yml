@@ -1,10 +1,14 @@
 # https://taskfile.dev
 
-version: '3'
+version: "3"
 
 vars:
   FILES_PLANTUML:
-    sh: find ./ -type f -name '*.plantuml' | sort -u | xargs
+    sh: >-
+      find ./ -type f -name '*.plantuml'
+      | grep -v '.terraform'
+      | sort -u
+      | xargs
 
 tasks:
   build:
