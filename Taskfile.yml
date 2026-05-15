@@ -198,6 +198,7 @@ tasks:
     cmds:
       - >-
         [ -e ".env" ] || cp -rf .env.example .env
+      - task: go:setup
       - task: uv:setup
       - task: skills:setup
 
@@ -208,6 +209,11 @@ tasks:
       - task: bun:setup
       - task: pre-commit:setup
       - task: git:setup
+
+  test:
+    desc: Execute of test
+    cmds:
+      - task: go:test
 
   fix:
     desc: "Run fix on all files"
